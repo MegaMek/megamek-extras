@@ -1,0 +1,85 @@
+name: Request for Enhancement
+description: Suggest a new feature or improvement for MegaMek
+title: "[RFE]: "
+labels: ["enhancement"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this Request for Enhancement!
+  - type: checkboxes
+    id: prerequisites
+    attributes:
+      label: Prerequisites
+      description: Please confirm you have completed the following steps before submitting an enhancement request.
+      options:
+        - label: I've checked to make sure that this enhancement has not already been requested
+          required: true
+        - label: I've considered the potential impact of this enhancement on existing features and gameplay
+          required: true
+        - label: I'm suggesting only one enhancement in this request for clarity and focus
+          required: true
+  - type: textarea
+    id: enhancement-summary
+    attributes:
+      label: Enhancement Summary
+      description: Provide a brief (1-2 sentences) summary of the proposed enhancement.
+      placeholder: Briefly describe the enhancement you're proposing
+    validations:
+      required: true
+  - type: textarea
+    id: problem-statement
+    attributes:
+      label: Problem Statement
+      description: Describe the problem or limitation that this enhancement would address.
+    validations:
+      required: true
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: Proposed Solution
+      description: Describe your proposed enhancement in detail. How would it solve the problem or improve the game?
+    validations:
+      required: true
+  - type: textarea
+    id: alternative-solutions
+    attributes:
+      label: Alternative Solutions
+      description: Have you considered any alternative solutions or features? If so, please describe them.
+    validations:
+      required: true
+  - type: textarea
+    id: benefits
+    attributes:
+      label: Benefits
+      description: What are the benefits of implementing this enhancement? How would it improve the user experience?
+    validations:
+      required: true
+  - type: textarea
+    id: potential-drawbacks
+    attributes:
+      label: Potential Drawbacks
+      description: Are there any potential drawbacks or negative impacts of this enhancement that you can foresee?
+    validations:
+      required: true
+  - type: dropdown
+    id: affected-components
+    attributes:
+      label: Affected Components
+      description: Which component(s) of the MegaMek suite would this enhancement affect?
+      multiple: true
+      options:
+        - MegaMek
+        - MegaMekLab
+        - MekHQ
+        - Other (specify in context)
+    validations:
+      required: true
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Add any other context, screenshots, or mock-ups about the enhancement request here.
+    validations:
+      required: false
