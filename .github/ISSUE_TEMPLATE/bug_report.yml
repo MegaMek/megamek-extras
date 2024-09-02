@@ -9,11 +9,18 @@ body:
         Please fill out the fields below with as much pertinent information as possible to help the developers solve the issue.
         **Make sure to search for your issue inside open and closed issues first to avoid duplicates.**
 
-  - type: input
+  - type: dropdown
     id: megamek-version
     attributes:
       label: MegaMek Version
       description: What version of MegaMek does your issue apply to? Note whether it is the stand-alone MegaMek or HQ's MegaMek.
+      options:
+        - v0.49.20-Development
+        - v0.49.19
+        - v0.49.18
+        - v0.49.17
+        - v0.49.16
+        # Add more versions as needed from the releases page
 
   - type: dropdown
     id: operating-system
