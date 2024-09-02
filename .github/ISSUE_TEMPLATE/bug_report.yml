@@ -1,19 +1,50 @@
 name: Bug Report
 description: Report an issue with MegaMek
-title: "[BUG]: "
+title: "[ISSUE]: [Version Number] - Brief Description"
 labels: [bug]
 body:
   - type: markdown
     attributes:
       value: |
-        Please fill out the fields below with as much pertinent information as possible to help the developers solve the issue.
-        **Make sure to search for your issue inside open and closed issues first to avoid duplicates.**
+        ## Prerequisites
+
+        Please answer the following questions for yourself before submitting an issue. **YOU MAY DELETE THE PREREQUISITES SECTION.**
+
+  - type: checkboxes
+    id: prerequisites
+    attributes:
+      label: Prerequisites Checklist
+      description: Check the boxes to confirm you have met the prerequisites.
+      options:
+        - label: "I've tested the issue against the latest MILESTONE"
+          required: true
+        - label: "I've checked the BattleTech rules and information in the documents folder and found no answer"
+          required: true
+        - label: "I've checked to make sure that this issue has not already been filed"
+          required: true
+        - label: "I'm reporting the issue to the correct repository"
+          required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Before Creating an Issue
+        1. **Choose the Right Issue Tracker**: Use the GitHub Issue tracker for the appropriate program (MegaMek, MegaMekLab, MekHQ). If unsure, team members can redirect your report.
+           - [MegaMek Issues](https://github.com/MegaMek/megamek/issues)
+           - [MegaMekLab Issues](https://github.com/MegaMek/megameklab/issues)
+           - [MekHQ Issues](https://github.com/MegaMek/mekhq/issues)
+
+        2. **Check for Duplicates**: Avoid creating a new issue if one already exists.
+
+        3. **Clarify Confusions Elsewhere**: If your issue stems from misunderstanding functionality, consult the forums rather than the issue tracker.
+
+        4. **One Issue Per Ticket**: This ensures clarity and focus, allowing for individual tracking and resolution.
 
   - type: dropdown
     id: megamek-version
     attributes:
       label: MegaMek Version
-      description: What version of MegaMek does your issue apply to? Note whether it is the stand-alone MegaMek or HQ's MegaMek.
+      description: Select the MegaMek version you are using.
       options:
         - v0.50.0
         - v0.49.20
@@ -30,18 +61,22 @@ body:
         - v0.49.9
         - v0.49.8
         - v0.49.7
+      validations:
+        required: true
 
   - type: input
     id: operating-system
     attributes:
       label: Operating System
-      description: Enter the operating system and version you are using (e.g., Windows 11, macOS Ventura 13.0, Ubuntu 22.04 LTS).
+      description: Enter the operating system and version you are using (e.g., Windows 11, macOS Ventura 13.0, Ubuntu 22.04 LTS). **REQUIRED**
+    validations:
+      required: true
 
   - type: dropdown
     id: java-version
     attributes:
       label: Java Version
-      description: Select the Java version you are using. If unsure, check the version at the top of the megamek.log file.
+      description: Select the Java version you are using. If unsure, check the version at the top of the megamek.log file. **REQUIRED**
       options:
         - Java 17
         - Java 11
@@ -60,45 +95,105 @@ body:
         - Java 7
         - Java 6
         - Java 5
-
-  - type: markdown
-    attributes:
-      value: |
-        ### Description
-        Describe the issue and provide screenshots in-game if possible.
-        Provide the rulebook, page number, and text if you feel this is a rules issue.
-        And provide the steps you have taken to reproduce the issue in the saved game if applicable.
-
-  - type: textarea
-    id: issue-description
-    attributes:
-      label: Issue Description
-      description: Describe the issue you encountered.
-
-  - type: textarea
-    id: reproduction-steps
-    attributes:
-      label: Steps to Reproduce
-      description: List the steps you took to reproduce the issue.
-
-  - type: markdown
-    attributes:
-      value: |
-        ### Files
-        Provide a saved game of when the issue was found. If possible, save the game during the phase before the issue occurs so the developers can step through the code and find exactly what is breaking.
-        Provide the megamek.log file for any NPEs or errors that MegaMek might be reporting. Do not paste the entire logfile text into this ticket. Just attach the actual megamek.log file.
-        And provide your player name so that they can load the saved game.
+      validations:
+        required: true
 
   - type: input
     id: player-name
     attributes:
       label: Player Name
-      description: Your player name so developers can load the saved game.
+      description: Your player name so developers can load the saved game. **REQUIRED**
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Expected Behavior
+
+        Please describe the behavior you are expecting. **REQUIRED**
 
   - type: textarea
-    id: log-file-instructions
+    id: expected-behavior
     attributes:
-      label: Log File Instructions
-      description: Attach the megamek.log file here. Do not paste the entire log text.
+      label: Expected Behavior
+      description: What behavior did you expect to see?
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Current Behavior
+
+        What is the current behavior? **REQUIRED**
+
+  - type: textarea
+    id: current-behavior
+    attributes:
+      label: Current Behavior
+      description: Describe the current behavior you are experiencing.
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Failure Information (for bugs)
+
+        Please help provide information about the failure if this is a bug. If it is not a bug, please remove the rest of this template.
+
+        ### Steps to Reproduce
+
+        Please provide detailed steps for reproducing the issue. **REQUIRED**
+
+        1. step 1
+        2. step 2
+        3. you get it...
+
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps to Reproduce
+      description: Describe the steps necessary to reproduce this issue.
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ### Context
+
+        Please provide any relevant information about your setup. This is important in case the issue is not reproducible except for under certain conditions. **REQUIRED**
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Provide details about your setup (e.g., Firmware Version, SDK version, Toolchain version, any other specific configurations).
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ### Failure Logs
+
+        Please include any relevant log snippets or files here. **Do not paste the entire log text directly into this ticket.** Attach log files instead. **REQUIRED**
+
+  - type: textarea
+    id: failure-logs
+    attributes:
+      label: Failure Logs
+      description: Include relevant parts of the log files, or attach the log files to this issue.
       render: "none"
       placeholder: "Attach your log file after creating the issue."
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ### Examples of Well-Reported Issues
+
+        For an example of a comprehensive issue report, see [MekHQ #3195](https://github.com/MegaMek/mekhq/issues/3195). Accuracy and detail are crucial for quick and effective resolution.
