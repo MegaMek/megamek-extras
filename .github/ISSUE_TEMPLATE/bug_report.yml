@@ -15,29 +15,51 @@ body:
       label: MegaMek Version
       description: What version of MegaMek does your issue apply to? Note whether it is the stand-alone MegaMek or HQ's MegaMek.
       options:
-        - v0.49.20-Development
+        - v0.50.0
+        - v0.49.20
         - v0.49.19
         - v0.49.18
         - v0.49.17
         - v0.49.16
-        # Add more versions as needed from the releases page
+        - v0.49.15
+        - v0.49.14
+        - v0.49.13
+        - v0.49.12
+        - v0.49.11
+        - v0.49.10
+        - v0.49.9
+        - v0.49.8
+        - v0.49.7
 
-  - type: dropdown
+  - type: input
     id: operating-system
     attributes:
       label: Operating System
-      description: What operating system are you using?
-      options:
-        - Windows
-        - Mac
-        - Linux
-        - Other
+      description: Enter the operating system and version you are using (e.g., Windows 11, macOS Ventura 13.0, Ubuntu 22.04 LTS).
 
-  - type: input
+  - type: dropdown
     id: java-version
     attributes:
       label: Java Version
-      description: What Java version are you using? (It will state your Java version at the top of the megamek.log file.)
+      description: Select the Java version you are using. If unsure, check the version at the top of the megamek.log file.
+      options:
+        - Java 17
+        - Java 11
+        - Java 8
+        - Java 21
+        - Java 20
+        - Java 19
+        - Java 18
+        - Java 16
+        - Java 15
+        - Java 14
+        - Java 13
+        - Java 12
+        - Java 10
+        - Java 9
+        - Java 7
+        - Java 6
+        - Java 5
 
   - type: markdown
     attributes:
