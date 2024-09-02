@@ -11,34 +11,34 @@ body:
         Please answer the following questions for yourself before submitting an issue. **YOU MAY DELETE THE PREREQUISITES SECTION.**
 
   - type: checkboxes
-    id: prerequisites
+    id: prerequisites-and-pre-issue-checks
     attributes:
-      label: Prerequisites Checklist
-      description: Check the boxes to confirm you have met the prerequisites.
+      label: Prerequisites and Pre-Issue Checklist
+      description: Please confirm you have completed the following steps before submitting an issue.
       options:
-        - label: "I've tested the issue against the latest MILESTONE"
+        - label: "I've checked the BattleTech rules and information in the documents folder and found no answer to my issue"
           required: true
-        - label: "I've checked the BattleTech rules and information in the documents folder and found no answer"
+        - label: "I've tested the issue against the latest MILESTONE version"
           required: true
         - label: "I've checked to make sure that this issue has not already been filed"
           required: true
-        - label: "I'm reporting the issue to the correct repository"
+        - label: "I understand that if my issue stems from misunderstanding functionality, I should consult the forums rather than the issue tracker"
+          required: true
+        - label: "I'm reporting only one issue in this ticket for clarity and focus"
+          required: true
+        - label: "I'm reporting the issue to the correct repository: [MegaMek](https://github.com/MegaMek/megamek/issues), [MegaMekLab](https://github.com/MegaMek/megameklab/issues), or [MekHQ](https://github.com/MegaMek/mekhq/issues)"
           required: true
 
   - type: markdown
     attributes:
       value: |
-        ## Before Creating an Issue
-        1. **Choose the Right Issue Tracker**: Use the GitHub Issue tracker for the appropriate program (MegaMek, MegaMekLab, MekHQ). If unsure, team members can redirect your report.
-           - [MegaMek Issues](https://github.com/MegaMek/megamek/issues)
-           - [MegaMekLab Issues](https://github.com/MegaMek/megameklab/issues)
-           - [MekHQ Issues](https://github.com/MegaMek/mekhq/issues)
+        If you're unsure about which repository to report your issue to, team members can redirect your report if necessary.
 
-        2. **Check for Duplicates**: Avoid creating a new issue if one already exists.
-
-        3. **Clarify Confusions Elsewhere**: If your issue stems from misunderstanding functionality, consult the forums rather than the issue tracker.
-
-        4. **One Issue Per Ticket**: This ensures clarity and focus, allowing for individual tracking and resolution.
+  - type: markdown
+    attributes:
+      value: |
+        ## Issue Description
+        Please provide detailed information about the bug you've encountered. All fields are required.
 
   - type: textarea
     id: issue-summary
@@ -46,6 +46,35 @@ body:
       label: Issue Summary
       description: Provide a brief (1-2 sentences) summary of the issue.
       placeholder: "Briefly describe the issue you're experiencing"
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-behavior
+    attributes:
+      label: Current Behavior
+      description: Describe the behavior you are currently experiencing.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected Behavior
+      description: Describe the behavior you expected to see.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps to Reproduce
+      description: Provide detailed steps for reproducing the issue.
+      placeholder: |
+        1. Step 1
+        2. Step 2
+        3. Step 3
+        ...
     validations:
       required: true
 
@@ -62,7 +91,7 @@ body:
     id: operating-system
     attributes:
       label: Operating System
-      description: Enter the operating system and version you are using (e.g., Windows 11, macOS Ventura 13.0, Ubuntu 22.04 LTS). **REQUIRED**
+      description: Enter the operating system and version you are using (e.g., Windows 11, macOS Ventura 13.0, Ubuntu 22.04 LTS).
     validations:
       required: true
 
@@ -79,93 +108,23 @@ body:
     validations:
       required: true
 
-  - type: input
-    id: player-name
-    attributes:
-      label: Player Name
-      description: Your player name so developers can load the saved game. **REQUIRED**
-    validations:
-      required: true
-
-  - type: markdown
-    attributes:
-      value: |
-        ## Expected Behavior
-
-        Please describe the behavior you are expecting. **REQUIRED**
-
-  - type: textarea
-    id: expected-behavior
-    attributes:
-      label: Expected Behavior
-      description: What behavior did you expect to see?
-    validations:
-      required: true
-
-  - type: markdown
-    attributes:
-      value: |
-        ## Current Behavior
-
-        What is the current behavior? **REQUIRED**
-
-  - type: textarea
-    id: current-behavior
-    attributes:
-      label: Current Behavior
-      description: Describe the current behavior you are experiencing.
-    validations:
-      required: true
-
-  - type: markdown
-    attributes:
-      value: |
-        ## Failure Information (for bugs)
-
-        Please help provide information about the failure if this is a bug. If it is not a bug, please remove the rest of this template.
-
-        ### Steps to Reproduce
-
-        Please provide detailed steps for reproducing the issue. **REQUIRED**
-
-        1. step 1
-        2. step 2
-        3. you get it...
-
-  - type: textarea
-    id: steps-to-reproduce
-    attributes:
-      label: Steps to Reproduce
-      description: Describe the steps necessary to reproduce this issue.
-    validations:
-      required: true
-
-  - type: markdown
-    attributes:
-      value: |
-        ### Context
-
-        Please provide any relevant information about your setup. This is important in case the issue is not reproducible except for under certain conditions. **REQUIRED**
-
   - type: textarea
     id: context
     attributes:
-      label: Context
-      description: Provide details about your setup and any other relevant information.
-      value: |
-        - Hardware specifications:
+      label: Additional Context
+      description: Provide any additional relevant information about your setup or conditions under which the issue occurs.
+      placeholder: |
+        - Specific game mode or scenario:
         - Any mods or custom content:
-        - Game mode (campaign, quick battle, etc.):
-        - Other relevant details:
+        - Any other relevant details:
     validations:
       required: true
 
   - type: markdown
     attributes:
       value: |
-        ### Failure Logs
-
-        Please include any relevant log snippets here. For full logs, please compress them and attach them to this issue after submitting. **REQUIRED**
+        ## Failure Logs
+        Please include any relevant log snippets here. For full logs, please compress them and attach them to this issue after submitting.
 
   - type: textarea
     id: failure-logs
@@ -179,6 +138,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        ### Examples of Well-Reported Issues
+        Thank you for providing this information. It will help us investigate and resolve the issue more effectively.
 
+        ### Examples of Well-Reported Issues
         For an example of a comprehensive issue report, see [MekHQ #3195](https://github.com/MegaMek/mekhq/issues/3195). Accuracy and detail are crucial for quick and effective resolution.
