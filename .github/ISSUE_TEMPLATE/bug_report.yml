@@ -160,7 +160,7 @@ body:
     validations:
       required: true
 
-- type: markdown
+  - type: markdown
     attributes:
       value: |
         ### Failure Logs
@@ -175,12 +175,6 @@ body:
       placeholder: "Paste relevant log snippets here. Attach full logs to the issue after submitting."
     validations:
       required: true
-  - type: input
-    id: log-file-upload
-    attributes:
-      label: Log File Upload
-      description: Attach the full log file here.
-      type: file
 
   - type: markdown
     attributes:
