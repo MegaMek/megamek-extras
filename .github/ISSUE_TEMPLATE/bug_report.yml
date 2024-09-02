@@ -108,30 +108,18 @@ body:
     validations:
       required: true
 
-  - type: textarea
-    id: context
-    attributes:
-      label: Additional Context
-      description: Provide any additional relevant information about your setup or conditions under which the issue occurs.
-      placeholder: |
-        - Specific game mode or scenario:
-        - Any mods or custom content:
-        - Any other relevant details:
-    validations:
-      required: true
-
   - type: markdown
     attributes:
       value: |
-        ## Failure Logs
-        Please include any relevant log snippets here. For full logs, please compress them and attach them to this issue after submitting.
+        ## Logs
+        Please include relevant log snippets here and attach all three log files (megamek.log, megameklab.log, and mekhq.log) from the logs folder to this issue after submitting.
 
   - type: textarea
-    id: failure-logs
+    id: logs
     attributes:
-      label: Failure Logs
-      description: Include relevant parts of the log files here. For full logs, please attach them to the issue after submission.
-      placeholder: "Paste relevant log snippets here. Attach full logs to the issue after submitting."
+      label: Logs
+      description: Include relevant parts of the log files here. Remember to attach all three full log files to the issue after submission.
+      placeholder: "Paste relevant log snippets here. Attach megamek.log, megameklab.log, and mekhq.log files to the issue after submitting."
     validations:
       required: true
 
