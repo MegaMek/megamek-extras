@@ -160,19 +160,21 @@ body:
     validations:
       required: true
 
-  - type: markdown
+- type: markdown
     attributes:
       value: |
         ### Failure Logs
 
-        Please include any relevant log snippets or files here. **REQUIRED**
+        Please include any relevant log snippets here. For full logs, please compress them and attach them to this issue after submitting. **REQUIRED**
 
   - type: textarea
     id: failure-logs
     attributes:
       label: Failure Logs
-      description: Include relevant parts of the log files here. For full logs, please use the file upload below.
-      placeholder: "Paste relevant log snippets here"
+      description: Include relevant parts of the log files here. For full logs, please attach them to the issue after submission.
+      placeholder: "Paste relevant log snippets here. Attach full logs to the issue after submitting."
+    validations:
+      required: true
   - type: input
     id: log-file-upload
     attributes:
