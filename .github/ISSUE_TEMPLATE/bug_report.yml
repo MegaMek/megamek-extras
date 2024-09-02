@@ -40,29 +40,23 @@ body:
 
         4. **One Issue Per Ticket**: This ensures clarity and focus, allowing for individual tracking and resolution.
 
-  - type: dropdown
+  - type: textarea
+    id: issue-summary
+    attributes:
+      label: Issue Summary
+      description: Provide a brief (1-2 sentences) summary of the issue.
+      placeholder: "Briefly describe the issue you're experiencing"
+    validations:
+      required: true
+
+  - type: input
     id: megamek-version
     attributes:
       label: MegaMek Version
-      description: Select the MegaMek version you are using.
-      options:
-        - v0.50.0
-        - v0.49.20
-        - v0.49.19
-        - v0.49.18
-        - v0.49.17
-        - v0.49.16
-        - v0.49.15
-        - v0.49.14
-        - v0.49.13
-        - v0.49.12
-        - v0.49.11
-        - v0.49.10
-        - v0.49.9
-        - v0.49.8
-        - v0.49.7
-      validations:
-        required: true
+      description: Enter the MegaMek version you are using (e.g., v0.50.0).
+      placeholder: "v0.50.0"
+    validations:
+      required: true
 
   - type: input
     id: operating-system
@@ -76,27 +70,14 @@ body:
     id: java-version
     attributes:
       label: Java Version
-      description: Select the Java version you are using. If unsure, check the version at the top of the megamek.log file. **REQUIRED**
+      description: Select the Java version you are using. If unsure, check the version at the top of the megamek.log file.
       options:
-        - Java 17
+        - Java 17 (Recommended)
         - Java 11
         - Java 8
-        - Java 21
-        - Java 20
-        - Java 19
-        - Java 18
-        - Java 16
-        - Java 15
-        - Java 14
-        - Java 13
-        - Java 12
-        - Java 10
-        - Java 9
-        - Java 7
-        - Java 6
-        - Java 5
-      validations:
-        required: true
+        - Other (specify in context)
+    validations:
+      required: true
 
   - type: input
     id: player-name
@@ -170,7 +151,12 @@ body:
     id: context
     attributes:
       label: Context
-      description: Provide details about your setup (e.g., Firmware Version, SDK version, Toolchain version, any other specific configurations).
+      description: Provide details about your setup and any other relevant information.
+      value: |
+        - Hardware specifications:
+        - Any mods or custom content:
+        - Game mode (campaign, quick battle, etc.):
+        - Other relevant details:
     validations:
       required: true
 
@@ -179,17 +165,20 @@ body:
       value: |
         ### Failure Logs
 
-        Please include any relevant log snippets or files here. **Do not paste the entire log text directly into this ticket.** Attach log files instead. **REQUIRED**
+        Please include any relevant log snippets or files here. **REQUIRED**
 
   - type: textarea
     id: failure-logs
     attributes:
       label: Failure Logs
-      description: Include relevant parts of the log files, or attach the log files to this issue.
-      render: "none"
-      placeholder: "Attach your log file after creating the issue."
-    validations:
-      required: true
+      description: Include relevant parts of the log files here. For full logs, please use the file upload below.
+      placeholder: "Paste relevant log snippets here"
+  - type: input
+    id: log-file-upload
+    attributes:
+      label: Log File Upload
+      description: Attach the full log file here.
+      type: file
 
   - type: markdown
     attributes:
