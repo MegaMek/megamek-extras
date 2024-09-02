@@ -1,38 +1,75 @@
 name: Bug Report
-description: File a bug report
+description: Report an issue with MegaMek
 title: "[BUG]: "
 labels: [bug]
 body:
   - type: markdown
     attributes:
       value: |
-        Please describe the bug you encountered.
-
-  - type: textarea
-    id: steps-to-reproduce
-    attributes:
-      label: Steps to Reproduce
-      description: List the steps to reproduce the bug
-      placeholder: "1. Go to '...'\n2. Click on '...'\n3. Scroll down to '...'\n4. See error"
+        Please fill out the fields below with as much pertinent information as possible to help the developers solve the issue.
+        **Make sure to search for your issue inside open and closed issues first to avoid duplicates.**
 
   - type: input
-    id: expected-behavior
+    id: megamek-version
     attributes:
-      label: Expected Behavior
-      description: What did you expect to happen?
-
-  - type: input
-    id: actual-behavior
-    attributes:
-      label: Actual Behavior
-      description: What actually happened?
+      label: MegaMek Version
+      description: What version of MegaMek does your issue apply to? Note whether it is the stand-alone MegaMek or HQ's MegaMek.
 
   - type: dropdown
-    id: severity
+    id: operating-system
     attributes:
-      label: Severity
+      label: Operating System
+      description: What operating system are you using?
       options:
-        - Critical
-        - Major
-        - Minor
-        - Trivial
+        - Windows
+        - Mac
+        - Linux
+        - Other
+
+  - type: input
+    id: java-version
+    attributes:
+      label: Java Version
+      description: What Java version are you using? (It will state your Java version at the top of the megamek.log file.)
+
+  - type: markdown
+    attributes:
+      value: |
+        ### Description
+        Describe the issue and provide screenshots in-game if possible.
+        Provide the rulebook, page number, and text if you feel this is a rules issue.
+        And provide the steps you have taken to reproduce the issue in the saved game if applicable.
+
+  - type: textarea
+    id: issue-description
+    attributes:
+      label: Issue Description
+      description: Describe the issue you encountered.
+
+  - type: textarea
+    id: reproduction-steps
+    attributes:
+      label: Steps to Reproduce
+      description: List the steps you took to reproduce the issue.
+
+  - type: markdown
+    attributes:
+      value: |
+        ### Files
+        Provide a saved game of when the issue was found. If possible, save the game during the phase before the issue occurs so the developers can step through the code and find exactly what is breaking.
+        Provide the megamek.log file for any NPEs or errors that MegaMek might be reporting. Do not paste the entire logfile text into this ticket. Just attach the actual megamek.log file.
+        And provide your player name so that they can load the saved game.
+
+  - type: input
+    id: player-name
+    attributes:
+      label: Player Name
+      description: Your player name so developers can load the saved game.
+
+  - type: textarea
+    id: log-file-instructions
+    attributes:
+      label: Log File Instructions
+      description: Attach the megamek.log file here. Do not paste the entire log text.
+      render: "none"
+      placeholder: "Attach your log file after creating the issue."
