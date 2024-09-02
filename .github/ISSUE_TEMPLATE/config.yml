@@ -3,7 +3,7 @@ blank_issues_enabled: true
 contact_links:
   - name: Questions
     url: https://discord.gg/megamek
-    about: You can join the discussions on Discord.
+    about: If you have questions about the above please ask on the Discord before selecting
 
   - name: MegaMek Wiki
     url: https://github.com/MegaMek/megamek/wiki
