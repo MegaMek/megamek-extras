@@ -1,0 +1,38 @@
+name: Bug Report
+description: File a bug report
+title: "[BUG]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please describe the bug you encountered.
+
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps to Reproduce
+      description: List the steps to reproduce the bug
+      placeholder: "1. Go to '...'\n2. Click on '...'\n3. Scroll down to '...'\n4. See error"
+
+  - type: input
+    id: expected-behavior
+    attributes:
+      label: Expected Behavior
+      description: What did you expect to happen?
+
+  - type: input
+    id: actual-behavior
+    attributes:
+      label: Actual Behavior
+      description: What actually happened?
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      options:
+        - Critical
+        - Major
+        - Minor
+        - Trivial
