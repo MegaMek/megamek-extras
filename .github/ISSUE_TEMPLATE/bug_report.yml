@@ -41,13 +41,11 @@ body:
     attributes:
       label: Prioritisation Checklist
       description: Choose the severity of the bug.
+      multiple: false
       options:
-        - label: "I can’t use the program anymore"
-          required: true
-        - label: "I found a way to continue using the program, but it’s still a problem"
-          required: true
+        - label: "I can't use the program anymore"
+        - label: "I found a way to continue using the program, but it's still a problem"
         - label: "The program still works, but it does something unexpected"
-          required: true
 
   - type: markdown
     attributes:
