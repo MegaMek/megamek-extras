@@ -54,7 +54,7 @@ body:
       value: |
         ## User Environment
 
-        Go to the folder where your logs are saved (usually called `logs`). Find the `MegaMek.log` file, open it, and copy the header from the top part of the file. You can also upload a picture of the top part here. Here's an example of what it looks like:
+        Go to the folder where your logs are saved (usually called `logs`). Find the `MegaMek.log` file, open it, and copy the text from the top part of the file. You can also upload a picture of the top part here. Here's an example of what it looks like:
 
         ![Example Screenshot](https://i.imgur.com/KD8cnvf.png)
 
