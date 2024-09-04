@@ -13,8 +13,20 @@ body:
           required: true
         - label: "I've checked the BattleTech rules and the information in the documents folder and found no answer to my issue"
           required: true
-        - label: "I understand that if my issue stems from misunderstanding functionality, I should consult the forums rather than the issue tracker"
+        - label: "I've ask on the MegaMek Discord about the error"
           required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      description: Choose the severity of the bug.
+      options:
+        - "Critical - I can't use the program anymore"
+        - "High - I found a way to continue using the program, but it's still a problem"
+        - "Medium - The program still works, but it does something unexpected"
+    validations:
+      required: true
 
   - type: markdown
     attributes:
@@ -27,26 +39,31 @@ body:
     id: brief-description
     attributes:
       label: Brief Description
-      description: Provide a short summary of what the issue is and how it impacts usage.
+      description: |
+        Please describe the issue in detail:
+        1. Provide in-game screenshots if possible.
+        2. If it's a rules-related issue:
+           - Specify the rulebook edition
+           - Include the page number
+           - Quote the relevant text
+        3. If applicable, list the steps to reproduce the issue in the saved game.
+      placeholder: "Describe the issue here..."
+    validations:
+      required: true
 
   - type: markdown
     attributes:
       value: |
-        ## Severity
+        ## Steps to Reproduce
 
-        How severe is the problem? Please select the option that best describes your situation.
+        How did the problem happen? Please list the steps you followed before the issue appeared.
 
-  - type: dropdown
-    id: severity
+  - type: textarea
+    id: steps-to-reproduce
     attributes:
-      label: Severity
-      description: Choose the severity of the bug.
-      options:
-        - "Critical - I can't use the program anymore (Blocker)"
-        - "High - I found a way to continue using the program, but it's still a problem (User Workaround Used)"
-        - "Medium - The program still works, but it does something unexpected (Annoyance)"
-    validations:
-      required: true
+      label: Steps to Reproduce
+      description: Provide a detailed numbered list of steps.
+      placeholder: "1. Step one\n2. Step two\n3. Step three"
 
   - type: markdown
     attributes:
@@ -96,20 +113,6 @@ body:
       label: Custom MegaMek Version
       description: If you selected "Free Text" in the version dropdown, enter your MegaMek version here.
       placeholder: "Enter your MegaMek version here if it's not listed above."
-
-  - type: markdown
-    attributes:
-      value: |
-        ## Steps to Reproduce
-
-        How did the problem happen? Please list the steps you followed before the issue appeared.
-
-  - type: textarea
-    id: steps-to-reproduce
-    attributes:
-      label: Steps to Reproduce
-      description: Provide a detailed numbered list of steps.
-      placeholder: "1. Step one\n2. Step two\n3. Step three"
 
   - type: markdown
     attributes:
