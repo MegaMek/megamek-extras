@@ -3,6 +3,12 @@ description: Report an issue with MegaMek
 title: "Brief Description"
 labels: [bug]
 body:
+  - type: markdown
+    attributes:
+      value: |
+        **Fields marked with a red asterisk (*) are mandatory to complete.**
+        Please ensure you've completed these fields before submitting.
+
   - type: checkboxes
     id: prerequisites-and-pre-issue-checks
     attributes:
@@ -13,32 +19,32 @@ body:
           required: true
         - label: "I've checked the BattleTech rules and the information in the documents folder and found no answer to my issue"
           required: true
-        - label: "I've ask on the MegaMek Discord about the error"
+        - label: "I've asked on the MegaMek Discord about the error"
           required: true
 
   - type: dropdown
     id: severity
     attributes:
-      label: Severity
+      label: Severity *
       description: Choose the severity of the bug.
       options:
-        - "Critical - I can't use the program anymore"
+        - "Critical - I can't use the program anymore or it crashes every time"
         - "High - I found a way to continue using the program, but it's still a problem"
-        - "Medium - The program still works, but it does something unexpected"
+        - "Medium - I haven't been able to duplicate the issue but it happened once"
     validations:
       required: true
 
   - type: markdown
     attributes:
       value: |
-        ## Brief Description
+        ## Brief Description *
 
         What happened? Please explain the issue in one or two sentences and how it stopped you from using the program. You can also upload a picture of the issue if possible.
 
   - type: textarea
     id: brief-description
     attributes:
-      label: Brief Description
+      label: Brief Description *
       description: |
         Please describe the issue in detail:
         1. Provide in-game screenshots if possible.
@@ -70,14 +76,14 @@ body:
       value: |
         ## User Environment
 
-        Go to the folder where your logs are saved (usually called `logs`). Find the `MegaMek.log` file, open it, and copy the text from the top part of the file. You can also upload a picture of the top part here. Here's an example of what it looks like:
+        For the next sections you'll go to the logs folder inside MegaMek saved (usually called `logs`). Find the `MegaMek.log` file, open it with a text editor:
 
         ![Example Screenshot](https://i.imgur.com/KD8cnvf.png)
 
   - type: dropdown
     id: operating-system
     attributes:
-      label: Operating System
+      label: Operating System *
       description: What kind of computer are you using? Select your operating system (like Windows or Mac).
       options:
         - Windows 11
@@ -85,17 +91,21 @@ body:
         - Older Windows
         - Mac
         - Linux
+    validations:
+      required: true
 
   - type: input
     id: java-version
     attributes:
-      label: Java Version
+      label: Java Version *
       description: What version of Java is on your computer? You can find this information at the top of your `MegaMek.log` file.
+    validations:
+      required: true
 
   - type: dropdown
     id: megamek-version
     attributes:
-      label: MegaMek Suite Version
+      label: MegaMek Suite Version *
       description: Which version of MegaMek are you using? Pick your version from the list. If you select "Free Text," please enter your version in the box below.
       options:
         - v0.50.0
@@ -119,7 +129,7 @@ body:
       value: |
         ## Files
 
-        Please zip (compress) your logs folder and upload the file here. If you're not sure how to zip the folder, ask for help.
+        Please zip (compress) your logs folder and upload the file here. If you're not sure how to zip the folder, ask for help. It would also be helpful to screen shot the log header (like above) and paste it here.
 
   - type: textarea
     id: attached-files
@@ -139,3 +149,8 @@ body:
           required: true
         - label: "I'm reporting the issue to the correct repository: MegaMek (https://github.com/MegaMek/megamek/issues), MegaMekLab (https://github.com/MegaMek/megameklab/issues), or MekHQ (https://github.com/MegaMek/mekhq/issues)"
           required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        **You will not be able to submit this report unless all fields marked with a red asterisk (*) are complete and filled out before submitting your report.**
