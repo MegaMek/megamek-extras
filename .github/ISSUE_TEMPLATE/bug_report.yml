@@ -32,19 +32,25 @@ body:
   - type: markdown
     attributes:
       value: |
-        ## Prioritisation
+        ## Severity
 
-        How bad is the problem? Please select the option that best describes your situation.
+        How severe is the problem? Please select the option that best describes your situation.
 
   - type: dropdown
-    id: prioritisation
+    id: severity
     attributes:
-      label: Prioritisation
+      label: Severity
       description: Choose the severity of the bug.
       options:
-        - "I can't use the program anymore"
-        - "I found a way to continue using the program, but it's still a problem"
-        - "The program still works, but it does something unexpected"
+        - Critical - I can't use the program anymore
+        - High - I found a way to continue using the program, but it's still a problem
+        - Medium - The program still works, but it does something unexpected
+    validations:
+      required: true
+    labels:
+      - Critical: Blocker
+      - High: User Workaround Used
+      - Medium: Annoyance
 
   - type: markdown
     attributes:
