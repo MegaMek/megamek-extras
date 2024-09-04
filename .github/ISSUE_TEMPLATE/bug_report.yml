@@ -34,18 +34,17 @@ body:
       value: |
         ## Prioritisation
 
-        How bad is the problem? Please check the box that describes your situation.
+        How bad is the problem? Please select the option that best describes your situation.
 
-  - type: checkboxes
+  - type: dropdown
     id: prioritisation
     attributes:
-      label: Prioritisation Checklist
+      label: Prioritisation
       description: Choose the severity of the bug.
-      multiple: false
       options:
-        - label: "I can't use the program anymore"
-        - label: "I found a way to continue using the program, but it's still a problem"
-        - label: "The program still works, but it does something unexpected"
+        - "I can't use the program anymore"
+        - "I found a way to continue using the program, but it's still a problem"
+        - "The program still works, but it does something unexpected"
 
   - type: markdown
     attributes:
