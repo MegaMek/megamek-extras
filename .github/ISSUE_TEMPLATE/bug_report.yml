@@ -42,15 +42,11 @@ body:
       label: Severity
       description: Choose the severity of the bug.
       options:
-        - Critical - I can't use the program anymore
-        - High - I found a way to continue using the program, but it's still a problem
-        - Medium - The program still works, but it does something unexpected
+        - Critical - I can't use the program anymore [Blocker]
+        - High - I found a way to continue using the program, but it's still a problem [User Workaround Used]
+        - Medium - The program still works, but it does something unexpected [Annoyance]
     validations:
       required: true
-    labels:
-      - Critical: Blocker
-      - High: User Workaround Used
-      - Medium: Annoyance
 
   - type: markdown
     attributes:
