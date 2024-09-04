@@ -1,14 +1,27 @@
 name: Bug Report
 description: Report an issue with MegaMek
-title: "[ISSUE]: [Version Number] - Brief Description"
+title: "Brief Description"
 labels: [bug]
 body:
+  - type: checkboxes
+    id: prerequisites-and-pre-issue-checks
+    attributes:
+      label: Prerequisites and Pre-Issue Checklist
+      description: Please confirm you have completed the following steps before submitting an issue.
+      options:
+        - label: "I've tested the issue against the latest MILESTONE version"
+          required: true
+        - label: "I've checked the BattleTech rules and the information in the documents folder and found no answer to my issue"
+          required: true
+        - label: "I understand that if my issue stems from misunderstanding functionality, I should consult the forums rather than the issue tracker"
+          required: true
+
   - type: markdown
     attributes:
       value: |
         ## Brief Description
 
-        Please tell us, in one or two sentences, what happened and what it prevented you from doing.
+        What happened? Please explain the issue in one or two sentences and how it stopped you from using the program. You can also upload a picture of the issue if possible.
 
   - type: textarea
     id: brief-description
@@ -21,7 +34,7 @@ body:
       value: |
         ## Prioritisation
 
-        Please tick the appropriate tickboxes that apply to your bug.
+        How bad is the problem? Please check the box that describes your situation.
 
   - type: checkboxes
     id: prioritisation
@@ -29,28 +42,30 @@ body:
       label: Prioritisation Checklist
       description: Choose the severity of the bug.
       options:
-        - label: "Hard Blocker - Prevents further use of the program (MegaMek, MekHQ, etc.)"
-          required: false
-        - label: "Soft Blocker - Prevents further use of the program, but I found a workaround"
-          required: false
-        - label: "Nuisance - Causes unexpected behavior but the program can still be used"
-          required: false
+        - label: "I can’t use the program anymore"
+          required: true
+        - label: "I found a way to continue using the program, but it’s still a problem"
+          required: true
+        - label: "The program still works, but it does something unexpected"
+          required: true
 
   - type: markdown
     attributes:
       value: |
         ## User Environment
 
-        Please provide details about your system and software versions.
+        Go to the folder where your logs are saved (usually called `logs`). Find the `MegaMek.log` file, open it, and copy the header from the top part of the file. You can also upload a picture of the top part here. Here's an example of what it looks like:
+
+        ![Example Screenshot](https://i.imgur.com/KD8cnvf.png)
 
   - type: dropdown
     id: operating-system
     attributes:
       label: Operating System
-      description: Select your operating system.
+      description: What kind of computer are you using? Select your operating system (like Windows or Mac).
       options:
-        - Windows 10
         - Windows 11
+        - Windows 10
         - Older Windows
         - Mac
         - Linux
@@ -59,25 +74,36 @@ body:
     id: java-version
     attributes:
       label: Java Version
-      description: Write which version of Java is installed on your machine. This can be found at the top of your megamek.log file in the megamek/logs folder.
+      description: What version of Java is on your computer? You can find this information at the top of your `MegaMek.log` file.
 
   - type: dropdown
     id: megamek-version
     attributes:
       label: MegaMek Suite Version
-      description: Select which version of MegaMek Suite you are using.
+      description: Which version of MegaMek are you using? Pick your version from the list. If you select "Free Text," please enter your version in the box below.
       options:
         - v0.50.0
         - v0.49.19.1
         - v0.49.19
+        - v0.49.18
+        - v0.49.17
+        - v0.49.16
+        - v0.49.15
         - Free Text (type manually)
+
+  - type: input
+    id: custom-megamek-version
+    attributes:
+      label: Custom MegaMek Version
+      description: If you selected "Free Text" in the version dropdown, enter your MegaMek version here.
+      placeholder: "Enter your MegaMek version here if it's not listed above."
 
   - type: markdown
     attributes:
       value: |
         ## Steps to Reproduce
 
-        Please provide detailed steps of what you were doing when the bug occurred.
+        How did the problem happen? Please list the steps you followed before the issue appeared.
 
   - type: textarea
     id: steps-to-reproduce
@@ -89,25 +115,25 @@ body:
   - type: markdown
     attributes:
       value: |
-        ## Log Extract
-
-        If you can see a Null Pointer Exception (NPE) in your log file, please paste that part here.
-
-  - type: textarea
-    id: log-extract
-    attributes:
-      label: Log Extract
-      description: Provide a section of your log file, particularly Null Pointer Exceptions (NPE).
-
-  - type: markdown
-    attributes:
-      value: |
         ## Files
 
-        Please attach any relevant files, including saved games, zipped Customs folder, and log files.
+        Please zip (compress) your logs folder and upload the file here. If you're not sure how to zip the folder, ask for help.
 
   - type: textarea
     id: attached-files
     attributes:
       label: Attach Files
       description: Provide any relevant files by attaching them to the issue.
+
+  - type: checkboxes
+    id: final-checks
+    attributes:
+      label: Final Checklist
+      description: Before submitting, confirm the following steps:
+      options:
+        - label: "I've checked to make sure that this issue has not already been filed"
+          required: true
+        - label: "I'm reporting only one issue in this ticket for clarity and focus"
+          required: true
+        - label: "I'm reporting the issue to the correct repository: [MegaMek](https://github.com/MegaMek/megamek/issues), [MegaMekLab](https://github.com/MegaMek/megameklab/issues), or [MekHQ](https://github.com/MegaMek/mekhq/issues)"
+          required: true
