@@ -24,6 +24,11 @@ body:
         - label: "I've reviewed the BattleTech rules and MegaMek documentation, and I've confirmed that something isn't working as intended."
           required: true
 
+  - type: markdown
+    attributes:
+      value: |
+        ![How to Search the GitHub Tracker](https://i.imgur.com/QMJY7pll.png)
+
   - type: dropdown
     id: severity
     attributes:
@@ -132,29 +137,4 @@ body:
       value: |
         ## Files
 
-        Please zip (compress) your logs folder and upload the file here. If you're not sure how to zip the folder, ask for help. It would also be helpful to screenshot the log header (like above) and paste it here.
-
-  - type: textarea
-    id: attached-files
-    attributes:
-      label: Attach Files
-      description: Provide any relevant files by attaching them to the issue.
-      placeholder: "Drag and drop or click to upload relevant files."
-
-  - type: checkboxes
-    id: final-checks
-    attributes:
-      label: Final Checklist
-      description: Before submitting, confirm the following steps
-      options:
-        - label: "I've checked to make sure that this issue has not already been filed"
-          required: true
-        - label: "I'm reporting only one issue in this ticket for clarity and focus"
-          required: true
-        - label: "I'm reporting the issue to the correct repository: MegaMek (https://github.com/MegaMek/megamek/issues), MegaMekLab (https://github.com/MegaMek/megameklab/issues), or MekHQ (https://github.com/MegaMek/mekhq/issues)"
-          required: true
-
-  - type: markdown
-    attributes:
-      value: |
-        **You will not be able to submit this report unless all fields marked with a red asterisk (*) are complete and filled out before submitting your report.**
+        Please zip (compress) your logs folder and upload the file here. If you're not sure how to zi
