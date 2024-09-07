@@ -15,7 +15,11 @@ body:
       label: Prerequisites and Pre-Issue Checklist
       description: Please confirm you have completed the following steps before submitting an issue.
       options:
-        - label: "I'm reporting the issue to the correct repository: MegaMek (https://github.com/MegaMek/megamek/issues), MegaMekLab (https://github.com/MegaMek/megameklab/issues), or MekHQ (https://github.com/MegaMek/mekhq/issues)"
+        - label: |
+            "I'm reporting the issue to the correct repository:
+            - MegaMek: https://github.com/MegaMek/megamek/issues
+            - MegaMekLab: https://github.com/MegaMek/megameklab/issues
+            - MekHQ: https://github.com/MegaMek/mekhq/issues"
           required: true
         - label: "I've tested the issue against the latest MILESTONE version"
           required: true
@@ -43,7 +47,6 @@ body:
         - "Low (Minor/Nuisance): Minor glitches or cosmetic issues that don’t affect gameplay and occur rarely."
     validations:
       required: true
-
 
   - type: markdown
     attributes:
@@ -87,7 +90,7 @@ body:
       value: |
         ## User Environment
 
-       For the next sections go to the logs folder inside MegaMek (usually called 'logs'). Find the MegaMek.log file, open it with a text editor. It will look like the image below. Fill the information you find there into the following sections:
+        For the next sections go to the logs folder inside MegaMek (usually called 'logs'). Find the MegaMek.log file, open it with a text editor. It will look like the image below. Fill the information you find there into the following sections:
 
         ![Example Screenshot](https://i.imgur.com/KD8cnvf.png)
 
@@ -97,11 +100,11 @@ body:
       label: Operating System *
       description: What kind of computer are you using? Select your operating system (like Windows or Mac).
       options:
-        - Windows 11
-        - Windows 10
-        - Older Windows
-        - Mac
-        - Linux
+        - "Windows 11"
+        - "Windows 10"
+        - "Older Windows"
+        - "Mac"
+        - "Linux"
     validations:
       required: true
 
@@ -109,7 +112,7 @@ body:
     id: java-version
     attributes:
       label: Java Version *
-      description: What version of Java is on your computer? You can find this information at the top of your `MegaMek.log` file.
+      description: What version of Java is on your computer? You can find this information at the top of your MegaMek.log file.
     validations:
       required: true
 
@@ -127,7 +130,6 @@ body:
         - "v0.49.16"
         - "v0.49.15"
         - "Free Text (type manually)"
-
 
   - type: input
     id: custom-megamek-version
