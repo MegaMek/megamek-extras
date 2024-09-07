@@ -41,9 +41,10 @@ body:
       label: Severity *
       description: Choose the severity of the bug.
       options:
-        - "Critical - I can't use the program anymore or it crashes every time"
-        - "High - I found a way to continue using the program, but it's still a problem"
-        - "Medium - I haven't been able to duplicate the issue but it happened once"
+        - "Critical (Game-breaking/Crash): The game crashes or a core feature (like saving, loading, or network connection) is completely unusable."
+        - "High (Major Disruption): A major feature is broken or incorrect, but a workaround exists."
+        - "Medium (Gameplay Limitation): Non-core functionality is impaired, providing a suboptimal but playable experience."
+        - "Low (Minor/Nuisance): Minor glitches or cosmetic issues that don’t affect gameplay and occur rarely."
     validations:
       required: true
 
@@ -149,6 +150,7 @@ body:
     attributes:
       label: Attach Files
       description: Provide any relevant files by attaching them to the issue.
+      placeholder: "Drag and drop or click to upload relevant files. Save games and custom units"
 
   - type: checkboxes
     id: final-checks
