@@ -119,14 +119,15 @@ body:
       label: MegaMek Suite Version *
       description: Which version of MegaMek are you using? Pick your version from the list. If you select "Free Text," please enter your version in the box below.
       options:
-        - label: "v0.50.0"
-        - label: "v0.49.19.1"
-        - label: "v0.49.19"
-        - label: "v0.49.18"
-        - label: "v0.49.17"
-        - label: "v0.49.16"
-        - label: "v0.49.15"
-        - label: "Free Text (type manually)"
+        - "v0.50.0"
+        - "v0.49.19.1"
+        - "v0.49.19"
+        - "v0.49.18"
+        - "v0.49.17"
+        - "v0.49.16"
+        - "v0.49.15"
+        - "Free Text (type manually)"
+
 
   - type: input
     id: custom-megamek-version
