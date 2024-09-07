@@ -162,8 +162,6 @@ body:
           required: true
         - label: "I'm reporting only one issue in this ticket for clarity and focus"
           required: true
-        - label: "I'm reporting the issue to the correct repository: MegaMek (https://github.com/MegaMek/megamek/issues), MegaMekLab (https://github.com/MegaMek/megameklab/issues), or MekHQ (https://github.com/MegaMek/mekhq/issues)"
-          required: true
 
   - type: markdown
     attributes:
