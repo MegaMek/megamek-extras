@@ -37,12 +37,13 @@ body:
       label: Severity *
       description: Choose the severity of the bug.
       options:
-        - label: "Critical (Game-breaking/Crash): The game crashes or a core feature (like saving, loading, or network connection) is completely unusable."
-        - label: "High (Major Disruption): A major feature is broken or incorrect, but a workaround exists."
-        - label: "Medium (Gameplay Limitation): Non-core functionality is impaired, providing a suboptimal but playable experience."
-        - label: "Low (Minor/Nuisance): Minor glitches or cosmetic issues that don’t affect gameplay and occur rarely."
+        - "Critical (Game-breaking/Crash): The game crashes or a core feature (like saving, loading, or network connection) is completely unusable."
+        - "High (Major Disruption): A major feature is broken or incorrect, but a workaround exists."
+        - "Medium (Gameplay Limitation): Non-core functionality is impaired, providing a suboptimal but playable experience."
+        - "Low (Minor/Nuisance): Minor glitches or cosmetic issues that don’t affect gameplay and occur rarely."
     validations:
       required: true
+
 
   - type: markdown
     attributes:
