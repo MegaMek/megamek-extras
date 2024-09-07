@@ -37,3 +37,131 @@ body:
       label: Severity *
       description: Choose the severity of the bug.
       options:
+        - label: "Critical (Game-breaking/Crash): The game crashes or a core feature (like saving, loading, or network connection) is completely unusable."
+        - label: "High (Major Disruption): A major feature is broken or incorrect, but a workaround exists."
+        - label: "Medium (Gameplay Limitation): Non-core functionality is impaired, providing a suboptimal but playable experience."
+        - label: "Low (Minor/Nuisance): Minor glitches or cosmetic issues that don’t affect gameplay and occur rarely."
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Brief Description *
+
+        What happened? Please explain the issue in one or two sentences and how it stopped you from using the program. You can also upload a picture of the issue if possible.
+
+  - type: textarea
+    id: brief-description
+    attributes:
+      label: Brief Description *
+      description: |
+        Please describe the issue in detail:
+        1. Provide in-game screenshots if possible.
+        2. If it's a rules-related issue:
+           - Specify the rulebook edition
+           - Include the page number
+           - Quote the relevant text
+        3. If applicable, list the steps to reproduce the issue in the saved game.
+      placeholder: "Describe the issue here..."
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Steps to Reproduce
+
+        How did the problem happen? Please list the steps you followed before the issue appeared.
+
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps to Reproduce
+      description: Provide a detailed numbered list of steps.
+      placeholder: "1. Step one\n2. Step two\n3. Step three"
+
+  - type: markdown
+    attributes:
+      value: |
+        ## User Environment
+
+        For the next sections you'll go to the logs folder inside MegaMek (usually called `logs`). Find the `MegaMek.log` file, open it with a text editor:
+
+        ![Example Screenshot](https://i.imgur.com/KD8cnvf.png)
+
+  - type: dropdown
+    id: operating-system
+    attributes:
+      label: Operating System *
+      description: What kind of computer are you using? Select your operating system (like Windows or Mac).
+      options:
+        - Windows 11
+        - Windows 10
+        - Older Windows
+        - Mac
+        - Linux
+    validations:
+      required: true
+
+  - type: input
+    id: java-version
+    attributes:
+      label: Java Version *
+      description: What version of Java is on your computer? You can find this information at the top of your `MegaMek.log` file.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: megamek-version
+    attributes:
+      label: MegaMek Suite Version *
+      description: Which version of MegaMek are you using? Pick your version from the list. If you select "Free Text," please enter your version in the box below.
+      options:
+        - label: "v0.50.0"
+        - label: "v0.49.19.1"
+        - label: "v0.49.19"
+        - label: "v0.49.18"
+        - label: "v0.49.17"
+        - label: "v0.49.16"
+        - label: "v0.49.15"
+        - label: "Free Text (type manually)"
+
+  - type: input
+    id: custom-megamek-version
+    attributes:
+      label: Custom MegaMek Version
+      description: If you selected "Free Text" in the version dropdown, enter your MegaMek version here.
+      placeholder: "Enter your MegaMek version here if it's not listed above."
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Files
+
+        Please zip (compress) your logs folder and upload the file here. If you're not sure how to zip the folder, ask for help. It would also be helpful to screenshot the log header (like above) and paste it here.
+
+  - type: textarea
+    id: attached-files
+    attributes:
+      label: Attach Files
+      description: Provide any relevant files by attaching them to the issue.
+      placeholder: "Drag and drop or click to upload relevant files."
+
+  - type: checkboxes
+    id: final-checks
+    attributes:
+      label: Final Checklist
+      description: Before submitting, confirm the following steps
+      options:
+        - label: "I've checked to make sure that this issue has not already been filed"
+          required: true
+        - label: "I'm reporting only one issue in this ticket for clarity and focus"
+          required: true
+        - label: "I'm reporting the issue to the correct repository: MegaMek (https://github.com/MegaMek/megamek/issues), MegaMekLab (https://github.com/MegaMek/megameklab/issues), or MekHQ (https://github.com/MegaMek/mekhq/issues)"
+          required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        **You will not be able to submit this report unless all fields marked with a red asterisk (*) are complete and filled out before submitting your report.**
