@@ -17,11 +17,11 @@ body:
       options:
         - label: "I've tested the issue against the latest MILESTONE version"
           required: true
-        - label: "I've searched the Github tracker and haven't found the issue listed"
-          required: true
         - label: "I've asked on the MegaMek Discord about the error"
           required: true
         - label: "I've reviewed the BattleTech rules and MegaMek documentation, and I've confirmed that something isn't working as intended."
+          required: true
+        - label: "I've searched the Github tracker and haven't found the issue listed"
           required: true
 
   - type: markdown
