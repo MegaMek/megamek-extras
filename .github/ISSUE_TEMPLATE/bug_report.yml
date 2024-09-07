@@ -16,10 +16,10 @@ body:
       description: Please confirm you have completed the following steps before submitting an issue.
       options:
         - label: |
-            "I'm reporting the issue to the correct repository:
+            I'm reporting the issue to the correct repository:
             - [MegaMek](https://github.com/MegaMek/megamek/issues)
             - [MegaMekLab](https://github.com/MegaMek/megameklab/issues)
-            - [MekHQ](https://github.com/MegaMek/mekhq/issues)"
+            - [MekHQ](https://github.com/MegaMek/mekhq/issues)
           required: true
         - label: "I've tested the issue against the latest MILESTONE version"
           required: true
