@@ -7,7 +7,7 @@ body:
     attributes:
       value: |
         **Fields marked with a red asterisk (*) are mandatory to complete.**
-        Please ensure you've completed these fields before submitting.
+        In this form, you’ll provide a description of the issue, steps to reproduce it, your system details, and any files that may help us resolve the problem.
 
   - type: checkboxes
     id: prerequisites-and-pre-issue-checks
@@ -19,17 +19,6 @@ body:
           required: true
         - label: "I've searched the Github tracker and haven't found the issue listed"
           required: true
-
-  - type: markdown
-    attributes:
-      value: |
-        ![How to Search the GitHub Tracker](https://i.imgur.com/QMJY7pll.png)
-
-  - type: checkboxes
-    id: prerequisites-and-pre-issue-checks-cont
-    attributes:
-      label: Additional Prerequisites
-      options:
         - label: "I've asked on the MegaMek Discord about the error"
           required: true
         - label: "I've reviewed the BattleTech rules and MegaMek documentation, and I've confirmed that something isn't working as intended."
@@ -150,7 +139,7 @@ body:
     attributes:
       label: Attach Files
       description: Provide any relevant files by attaching them to the issue.
-      placeholder: "Drag and drop or click to upload relevant files. Save games and custom units"
+      placeholder: "Drag and drop or click to upload relevant files."
 
   - type: checkboxes
     id: final-checks
