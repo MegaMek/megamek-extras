@@ -6,19 +6,26 @@ body:
   - type: markdown
     attributes:
       value: |
+        **This form is to submit a Request for Enhancement (RFE)—asking for a new feature, extending an existing feature, or implementing missing rules or errata. Submitting an RFE is no guarantee of its prioritization by the development team.**
+
+  - type: markdown
+    attributes:
+      value: |
         **Fields marked with a red asterisk (*) are mandatory to complete.**
-        In this form, you'll provide a description of the issue, steps to reproduce it, your system details, and any files that may help us resolve the problem.
+        This form is to submit a Request for Enhancement (RFE)—asking for a new feature, extending an existing feature, or implementing missing rules or errata. Submitting an RFE is no guarantee of its prioritization by the development team.
+
+        Please provide a detailed description of the enhancement you're requesting, the use case, and any files or screenshots that could help us understand the request.
 
         Before submitting an RFE, please review our [Content Policy](https://github.com/MegaMek/megamek/wiki/Unofficial-or-Non%E2%80%90Canon-Content-Policy).
-
+  
   - type: checkboxes
     id: prerequisites-and-pre-issue-checks
     attributes:
       label: Prerequisites and Pre-Issue Checklist
-      description: Please confirm you have completed the following steps before submitting an issue.
+      description: Please confirm you have completed the following steps before submitting an RFE.
       options:
         - label: |
-            I'm reporting the issue to the correct repository:
+            I'm reporting the RFE to the correct repository:
             - [MegaMek](https://github.com/MegaMek/megamek/issues)
             - [MegaMekLab](https://github.com/MegaMek/megameklab/issues)
             - [MekHQ](https://github.com/MegaMek/mekhq/issues)
@@ -36,9 +43,9 @@ body:
     id: rfe
     attributes:
       label: RFE Details *
-      description: Please select one of the following options.
+      description: Please select the type of RFE you're submitting.
       options:
-        - "This is an all new feature"
+        - "This is a new feature"
         - "This is an improvement to an existing feature"
         - "This is an implementation of a missing official rule"
         - "This is a request to implement Errata"
@@ -48,8 +55,8 @@ body:
   - type: markdown
     attributes:
       value: |
-        For New features or Improvements to existing describe in detail.
-        For rule implementations, provide book, page, and edition. 
+        For new features or improvements to existing features, please describe them in detail.
+        For rule implementations, provide the book, page, and edition.
         For errata, reference the official documents: [Errata](https://bg.battletech.com/errata/)
 
   - type: textarea
@@ -57,9 +64,9 @@ body:
     attributes:
       label: Brief Description *
       description: |
-        ## Brief Description of feature *
+        ## Brief Description of the Feature *
       placeholder: |
-        Describe the enhancement in detail. Include screenshots/mock-ups if possible.
+        Provide a detailed description of the requested feature, including why it's needed, any relevant use cases, and screenshots/mock-ups if applicable.
     validations:
       required: true
 
@@ -83,7 +90,7 @@ body:
     id: final-checks
     attributes:
       label: Final Checklist
-      description: Before submitting, confirm the following steps
+      description: Before submitting, confirm the following steps:
       options:
         - label: "I've checked to make sure that this RFE has not already been filed"
           required: true
