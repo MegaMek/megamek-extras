@@ -1,7 +1,5 @@
 name: Request for Enhancement
-description: >
-  Use this to request an enhancement or new feature for MegaMek. Before submitting an RFE please review the following
-  [Content Policy](https://github.com/MegaMek/megamek/wiki/Unofficial-or-Non%E2%80%90Canon-Content-Policy)
+description: Request an enhancement for MegaMek. Review our [Content Policy](https://github.com/MegaMek/megamek/wiki/Unofficial-or-Non%E2%80%90Canon-Content-Policy) first.
 title: "Brief Description"
 labels: [enhancement]
 body:
@@ -52,11 +50,7 @@ body:
       description: |
         ## Brief Description of feature *
       placeholder: |
-        Please describe the enhancement in detail and include screenshots and mockups if possible. If this is an improvement
-        to an existing feature, outline what is changing and what would need to change. For implementation of missing rules
-        or equipment from the official core rules, please include the book, page number, and edition. If this is about
-        implementing errata, please reference the specific errata from the official errata documents found
-        [here](https://bg.battletech.com/errata/).
+        Describe the enhancement in detail. Include screenshots if possible. For rule implementations, provide book, page, and edition. For errata, reference the official documents: [Errata](https://bg.battletech.com/errata/)
     validations:
       required: true
 
