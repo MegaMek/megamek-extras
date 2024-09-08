@@ -1,5 +1,7 @@
 name: Request for Enhancement
-description: Use this to request an enhancement or new feature for MegaMek. Before submitting an RFE please review the following [Content Policy](https://github.com/MegaMek/megamek/wiki/Unofficial-or-Non%E2%80%90Canon-Content-Policy)
+description: >
+  Use this to request an enhancement or new feature for MegaMek. Before submitting an RFE please review the following
+  [Content Policy](https://github.com/MegaMek/megamek/wiki/Unofficial-or-Non%E2%80%90Canon-Content-Policy)
 title: "Brief Description"
 labels: [enhancement]
 body:
@@ -7,7 +9,7 @@ body:
     attributes:
       value: |
         **Fields marked with a red asterisk (*) are mandatory to complete.**
-        In this form, you’ll provide a description of the issue, steps to reproduce it, your system details, and any files that may help us resolve the problem.
+        In this form, you'll provide a description of the issue, steps to reproduce it, your system details, and any files that may help us resolve the problem.
 
   - type: checkboxes
     id: prerequisites-and-pre-issue-checks
@@ -15,7 +17,7 @@ body:
       label: Prerequisites and Pre-Issue Checklist
       description: Please confirm you have completed the following steps before submitting an issue.
       options:
-        - label: |
+        - label: >
             I'm reporting the issue to the correct repository:
             - [MegaMek](https://github.com/MegaMek/megamek/issues)
             - [MegaMekLab](https://github.com/MegaMek/megameklab/issues)
@@ -28,8 +30,7 @@ body:
 
   - type: markdown
     attributes:
-      value: |
-        ![How to Search the GitHub Tracker](https://i.imgur.com/QMJY7pll.png)
+      value: "![How to Search the GitHub Tracker](https://i.imgur.com/QMJY7pll.png)"
 
   - type: dropdown
     id: rfe
@@ -44,26 +45,18 @@ body:
     validations:
       required: true
 
-  - type: markdown
-    attributes:
-      value: |
-        ## Brief Description *
-
-Please describe the enhancement in detail and include screenshots and mockups if possible. If this is an improvement to an existing feature, outline what is changing and what would need to change. For implementation of missing rules or equipment from the official core rules, please include the book, page number, and edition. If this is about implementing errata, please reference the specific errata from the official errata documents found [here](https://bg.battletech.com/errata/).
-
   - type: textarea
     id: brief-description
     attributes:
       label: Brief Description *
       description: |
-        Please describe the issue in detail:
-        1. Provide in-game screenshots if possible.
-        2. If it's a rules-related issue:
-           - Specify the rulebook edition
-           - Include the page number
-           - Quote the relevant text
-        3. If applicable, list the steps to reproduce the issue in the saved game.
-      placeholder: "Describe the issue here..."
+        ## Brief Description of feature *
+      placeholder: >
+        Please describe the enhancement in detail and include screenshots and mockups if possible. If this is an improvement
+        to an existing feature, outline what is changing and what would need to change. For implementation of missing rules
+        or equipment from the official core rules, please include the book, page number, and edition. If this is about
+        implementing errata, please reference the specific errata from the official errata documents found
+        [here](https://bg.battletech.com/errata/).
     validations:
       required: true
 
@@ -71,7 +64,9 @@ Please describe the enhancement in detail and include screenshots and mockups if
     id: megamek-version
     attributes:
       label: MegaMek Suite Version *
-      description: Which version of MegaMek are you using? Pick your version from the list. If you select "Free Text," please enter your version in the box below. All RFEs must be checked against the most current development release.
+      description: >
+        Which version of MegaMek are you using? Pick your version from the list. If you select "Free Text," please enter
+        your version in the box below. All RFEs must be checked against the most current development release.
       options:
         - "v0.50.0"
         - "v0.49.19.1"
