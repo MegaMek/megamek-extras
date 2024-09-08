@@ -17,7 +17,7 @@ body:
       label: Prerequisites and Pre-Issue Checklist
       description: Please confirm you have completed the following steps before submitting an issue.
       options:
-        - label: >
+        - label: |
             I'm reporting the issue to the correct repository:
             - [MegaMek](https://github.com/MegaMek/megamek/issues)
             - [MegaMekLab](https://github.com/MegaMek/megameklab/issues)
@@ -51,7 +51,7 @@ body:
       label: Brief Description *
       description: |
         ## Brief Description of feature *
-      placeholder: >
+      placeholder: |
         Please describe the enhancement in detail and include screenshots and mockups if possible. If this is an improvement
         to an existing feature, outline what is changing and what would need to change. For implementation of missing rules
         or equipment from the official core rules, please include the book, page number, and edition. If this is about
@@ -64,7 +64,7 @@ body:
     id: megamek-version
     attributes:
       label: MegaMek Suite Version *
-      description: >
+      description: |
         Which version of MegaMek are you using? Pick your version from the list. If you select "Free Text," please enter
         your version in the box below. All RFEs must be checked against the most current development release.
       options:
@@ -97,7 +97,7 @@ body:
     id: final-checks
     attributes:
       label: Final Checklist
-      description: Before submitting, confirm the following steps:
+      description: Before submitting, confirm the following steps
       options:
         - label: "I've checked to make sure that this RFE has not already been filed"
           required: true
