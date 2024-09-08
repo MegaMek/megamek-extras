@@ -1,6 +1,6 @@
 name: Request for Enhancement
 description: Request an enhancement for MegaMek. Review our Content Policy first.
-title: "Brief Description"
+title: "[RFE] Brief Description"
 labels: [enhancement]
 body:
   - type: markdown
