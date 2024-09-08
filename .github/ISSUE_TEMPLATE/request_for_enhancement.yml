@@ -1,5 +1,5 @@
 name: Request for Enhancement
-description: Request an enhancement for MegaMek. Review our [Content Policy](https://github.com/MegaMek/megamek/wiki/Unofficial-or-Non%E2%80%90Canon-Content-Policy) first.
+description: Request an enhancement for MegaMek. Review our Content Policy first.
 title: "Brief Description"
 labels: [enhancement]
 body:
@@ -8,6 +8,8 @@ body:
       value: |
         **Fields marked with a red asterisk (*) are mandatory to complete.**
         In this form, you'll provide a description of the issue, steps to reproduce it, your system details, and any files that may help us resolve the problem.
+
+        Before submitting an RFE, please review our [Content Policy](https://github.com/MegaMek/megamek/wiki/Unofficial-or-Non%E2%80%90Canon-Content-Policy).
 
   - type: checkboxes
     id: prerequisites-and-pre-issue-checks
@@ -43,6 +45,12 @@ body:
     validations:
       required: true
 
+  - type: markdown
+    attributes:
+      value: |
+        For rule implementations, provide book, page, and edition. 
+        For errata, reference the official documents: [Errata](https://bg.battletech.com/errata/)
+
   - type: textarea
     id: brief-description
     attributes:
@@ -50,7 +58,7 @@ body:
       description: |
         ## Brief Description of feature *
       placeholder: |
-        Describe the enhancement in detail. Include screenshots if possible. For rule implementations, provide book, page, and edition. For errata, reference the official documents: [Errata](https://bg.battletech.com/errata/)
+        Describe the enhancement in detail. Include screenshots if possible.
     validations:
       required: true
 
