@@ -54,31 +54,14 @@ body:
     validations:
       required: true
 
-  - type: dropdown
+  - type: input
     id: megamek-version
     attributes:
       label: MegaMek Suite Version *
-      description: |
-        Which version of MegaMek are you using? Pick your version from the list. If you select "Free Text," please enter
-        your version in the box below. All RFEs must be checked against the most current development release.
-      options:
-        - "v0.50.0"
-        - "v0.49.19.1"
-        - "v0.49.19"
-        - "v0.49.18"
-        - "v0.49.17"
-        - "v0.49.16"
-        - "v0.49.15"
-        - "Free Text (type manually)"
+      description: Which version of MegaMek are you using? All RFEs must be checked against the most current development release.
+      placeholder: "e.g., v0.50.0, v0.49.19.1, or development version"
     validations:
       required: true
-
-  - type: input
-    id: custom-megamek-version
-    attributes:
-      label: Custom MegaMek Version
-      description: If you selected "Free Text" in the version dropdown, enter your MegaMek version here.
-      placeholder: "Enter your MegaMek version here if it's not listed above."
 
   - type: textarea
     id: attached-files
