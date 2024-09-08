@@ -48,6 +48,7 @@ body:
   - type: markdown
     attributes:
       value: |
+        For New features or Improvements to existing describe in detail.
         For rule implementations, provide book, page, and edition. 
         For errata, reference the official documents: [Errata](https://bg.battletech.com/errata/)
 
@@ -58,7 +59,7 @@ body:
       description: |
         ## Brief Description of feature *
       placeholder: |
-        Describe the enhancement in detail. Include screenshots if possible.
+        Describe the enhancement in detail. Include screenshots/mock-ups if possible.
     validations:
       required: true
 
