@@ -8,16 +8,12 @@ body:
       value: |
         **This form is to submit a Request for Enhancement (RFE)—asking for a new feature, extending an existing feature, or implementing missing rules or errata. Submitting an RFE is no guarantee of its prioritization by the development team.**
 
-  - type: markdown
-    attributes:
-      value: |
         **Fields marked with a red asterisk (*) are mandatory to complete.**
-        This form is to submit a Request for Enhancement (RFE)—asking for a new feature, extending an existing feature, or implementing missing rules or errata. Submitting an RFE is no guarantee of its prioritization by the development team.
 
         Please provide a detailed description of the enhancement you're requesting, the use case, and any files or screenshots that could help us understand the request.
 
         Before submitting an RFE, please review our [Content Policy](https://github.com/MegaMek/megamek/wiki/Unofficial-or-Non%E2%80%90Canon-Content-Policy).
-  
+
   - type: checkboxes
     id: prerequisites-and-pre-issue-checks
     attributes:
