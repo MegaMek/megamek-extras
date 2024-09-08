@@ -90,7 +90,7 @@ body:
     id: final-checks
     attributes:
       label: Final Checklist
-      description: Before submitting, confirm the following steps:
+      description: Before submitting, confirm the following steps-
       options:
         - label: "I've checked to make sure that this RFE has not already been filed"
           required: true
