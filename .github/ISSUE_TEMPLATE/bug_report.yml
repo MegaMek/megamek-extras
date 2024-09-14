@@ -9,18 +9,20 @@ body:
         **Fields marked with a red asterisk (*) are mandatory to complete.**
         In this form, you’ll provide a description of the issue, steps to reproduce it, your system details, and any files that may help us resolve the problem.
 
-  <!-- Prerequisites and Pre-Issue Checklist (This section won't appear in the final report) -->
-  <!--
-  Please confirm the following before submitting the issue:
-  - I'm reporting the issue to the correct repository:
-      - [MegaMek](https://github.com/MegaMek/megamek/issues)
-      - [MegaMekLab](https://github.com/MegaMek/megameklab/issues)
-      - [MekHQ](https://github.com/MegaMek/mekhq/issues)
-  - I've tested the issue against the latest MILESTONE version
-  - I've asked on the MegaMek Discord about the error
-  - I've reviewed the BattleTech rules and MegaMek documentation, and I've confirmed that something isn't working as intended.
-  - I've searched the Github tracker and haven't found the issue listed
-  -->
+  # Prerequisites and Pre-Issue Checklist (This section won't appear in the final report)
+  # Comments in YAML must use a single hash (#) not double dash <!-- --> like in HTML.
+  - type: markdown
+    attributes:
+      value: |
+        **Please confirm the following before submitting the issue (won't appear in final report):**
+        - Reporting the issue to the correct repository:
+            - [MegaMek](https://github.com/MegaMek/megamek/issues)
+            - [MegaMekLab](https://github.com/MegaMek/megameklab/issues)
+            - [MekHQ](https://github.com/MegaMek/mekhq/issues)
+        - Tested the issue against the latest MILESTONE version
+        - Asked on the MegaMek Discord about the error
+        - Reviewed BattleTech rules and MegaMek documentation, confirming something isn't working as intended
+        - Searched the GitHub tracker for the issue and haven’t found it listed
 
   - type: markdown
     attributes:
