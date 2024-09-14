@@ -10,19 +10,22 @@ body:
         In this form, you’ll provide a description of the issue, steps to reproduce it, your system details, and any files that may help us resolve the problem.
 
   # Prerequisites and Pre-Issue Checklist (This section won't appear in the final report)
-  # Comments in YAML must use a single hash (#) not double dash <!-- --> like in HTML.
-  - type: markdown
+  - type: checkboxes
+    id: prerequisites-and-pre-issue-checks
     attributes:
-      value: |
-        **Please confirm the following before submitting the issue (won't appear in final report):**
-        - Reporting the issue to the correct repository:
-            - [MegaMek](https://github.com/MegaMek/megamek/issues)
-            - [MegaMekLab](https://github.com/MegaMek/megameklab/issues)
-            - [MekHQ](https://github.com/MegaMek/mekhq/issues)
-        - Tested the issue against the latest MILESTONE version
-        - Asked on the MegaMek Discord about the error
-        - Reviewed BattleTech rules and MegaMek documentation, confirming something isn't working as intended
-        - Searched the GitHub tracker for the issue and haven’t found it listed
+      label: Prerequisites and Pre-Issue Checklist (won't appear in final report)
+      description: Please confirm the following before submitting the issue.
+      options:
+        - label: "I'm reporting the issue to the correct repository (MegaMek, MegaMekLab, or MekHQ)"
+          required: true
+        - label: "I've tested the issue against the latest MILESTONE version"
+          required: true
+        - label: "I've asked on the MegaMek Discord about the error"
+          required: true
+        - label: "I've reviewed the BattleTech rules and MegaMek documentation, confirming something isn't working as intended"
+          required: true
+        - label: "I've searched the GitHub tracker and haven’t found the issue listed"
+          required: true
 
   - type: markdown
     attributes:
@@ -42,114 +45,11 @@ body:
     validations:
       required: true
 
-  - type: markdown
-    attributes:
-      value: |
-        ## Brief Description *
-
-        What happened? Please explain the issue in one or two sentences and how it stopped you from using the program. You can also upload a picture of the issue if possible.
-
-  - type: textarea
-    id: brief-description
-    attributes:
-      label: Brief Description *
-      description: |
-        Please describe the issue in detail:
-        1. Provide in-game screenshots if possible.
-        2. If it's a rules-related issue:
-           - Specify the rulebook edition
-           - Include the page number
-           - Quote the relevant text
-        3. If applicable, list the steps to reproduce the issue in the saved game.
-      placeholder: "Describe the issue here..."
-    validations:
-      required: true
-
-  - type: markdown
-    attributes:
-      value: |
-        ## Steps to Reproduce
-
-        How did the problem happen? Please list the steps you followed before the issue appeared.
-
-  - type: textarea
-    id: steps-to-reproduce
-    attributes:
-      label: Steps to Reproduce
-      description: Provide a detailed numbered list of steps.
-      placeholder: "1. Step one\n2. Step two\n3. Step three"
-
-  - type: markdown
-    attributes:
-      value: |
-        ## User Environment
-
-        For the next sections go to the logs folder inside MegaMek (usually called 'logs'). Find the MegaMek.log file, open it with a text editor. It will look like the image below. Fill the information you find there into the following sections:
-
-        ![Example Screenshot](https://i.imgur.com/KD8cnvf.png)
-
-  - type: dropdown
-    id: operating-system
-    attributes:
-      label: Operating System *
-      description: What kind of computer are you using? Select your operating system (like Windows or Mac).
-      options:
-        - "Windows 11"
-        - "Windows 10"
-        - "Older Windows"
-        - "Mac"
-        - "Linux"
-    validations:
-      required: true
-
-  - type: input
-    id: java-version
-    attributes:
-      label: Java Version *
-      description: What version of Java is on your computer? You can find this information at the top of your MegaMek.log file.
-    validations:
-      required: true
-
-  - type: dropdown
-    id: megamek-version
-    attributes:
-      label: MegaMek Suite Version *
-      description: Which version of MegaMek are you using? Pick your version from the list. If you select "Free Text," please enter your version in the box below.
-      options:
-        - "v0.50.0"
-        - "v0.49.19.1"
-        - "v0.49.19"
-        - "v0.49.18"
-        - "v0.49.17"
-        - "v0.49.16"
-        - "v0.49.15"
-        - "Free Text (type manually)"
-
-  - type: input
-    id: custom-megamek-version
-    attributes:
-      label: Custom MegaMek Version
-      description: If you selected "Free Text" in the version dropdown, enter your MegaMek version here.
-      placeholder: "Enter your MegaMek version here if it's not listed above."
-
-  - type: markdown
-    attributes:
-      value: |
-        ## Files
-
-        Please zip (compress) your logs folder and upload the file here. If you're not sure how to zip the folder, ask for help. It would also be helpful to screenshot the log header (like above) and paste it here.
-
-  - type: textarea
-    id: attached-files
-    attributes:
-      label: Attach Files
-      description: Provide any relevant files by attaching them to the issue.
-      placeholder: "Drag and drop or click to upload relevant files."
-
+  # Final Checklist (This section won't appear in the final report)
   - type: checkboxes
     id: final-checks
     attributes:
-      label: Final Checklist
+      label: Final Checklist (won't appear in final report)
       description: Before submitting, confirm the following steps
       options:
         - label: "I've checked to make sure that this issue has not already been filed"
