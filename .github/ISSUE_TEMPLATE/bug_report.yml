@@ -9,26 +9,18 @@ body:
         **Fields marked with a red asterisk (*) are mandatory to complete.**
         In this form, you’ll provide a description of the issue, steps to reproduce it, your system details, and any files that may help us resolve the problem.
 
-  - type: checkboxes
-    id: prerequisites-and-pre-issue-checks
-    attributes:
-      label: Prerequisites and Pre-Issue Checklist
-      description: Please confirm you have completed the following steps before submitting an issue.
-      options:
-        - label: |
-            I'm reporting the issue to the correct repository:
-            - [MegaMek](https://github.com/MegaMek/megamek/issues)
-            - [MegaMekLab](https://github.com/MegaMek/megameklab/issues)
-            - [MekHQ](https://github.com/MegaMek/mekhq/issues)
-          required: true
-        - label: "I've tested the issue against the latest MILESTONE version"
-          required: true
-        - label: "I've asked on the MegaMek Discord about the error"
-          required: true
-        - label: "I've reviewed the BattleTech rules and MegaMek documentation, and I've confirmed that something isn't working as intended."
-          required: true
-        - label: "I've searched the Github tracker and haven't found the issue listed"
-          required: true
+  <!-- Prerequisites and Pre-Issue Checklist (This section won't appear in the final report) -->
+  <!--
+  Please confirm the following before submitting the issue:
+  - I'm reporting the issue to the correct repository:
+      - [MegaMek](https://github.com/MegaMek/megamek/issues)
+      - [MegaMekLab](https://github.com/MegaMek/megameklab/issues)
+      - [MekHQ](https://github.com/MegaMek/mekhq/issues)
+  - I've tested the issue against the latest MILESTONE version
+  - I've asked on the MegaMek Discord about the error
+  - I've reviewed the BattleTech rules and MegaMek documentation, and I've confirmed that something isn't working as intended.
+  - I've searched the Github tracker and haven't found the issue listed
+  -->
 
   - type: markdown
     attributes:
