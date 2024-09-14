@@ -9,23 +9,20 @@ body:
         **Fields marked with a red asterisk (*) are mandatory to complete.**
         In this form, you’ll provide a description of the issue, steps to reproduce it, your system details, and any files that may help us resolve the problem.
 
-  # Prerequisites and Pre-Issue Checklist (This section won't appear in the final report)
-  - type: checkboxes
-    id: prerequisites-and-pre-issue-checks
+  # Prerequisites and Pre-Issue Checklist (This section will be collapsible in the final report)
+  - type: markdown
     attributes:
-      label: Prerequisites and Pre-Issue Checklist (won't appear in final report)
-      description: Please confirm the following before submitting the issue.
-      options:
-        - label: "I'm reporting the issue to the correct repository (MegaMek, MegaMekLab, or MekHQ)"
-          required: true
-        - label: "I've tested the issue against the latest MILESTONE version"
-          required: true
-        - label: "I've asked on the MegaMek Discord about the error"
-          required: true
-        - label: "I've reviewed the BattleTech rules and MegaMek documentation, confirming something isn't working as intended"
-          required: true
-        - label: "I've searched the GitHub tracker and haven’t found the issue listed"
-          required: true
+      value: |
+        <details>
+        <summary>Prerequisites and Pre-Issue Checklist (click to expand)</summary>
+        
+        - [ ] I'm reporting the issue to the correct repository (MegaMek, MegaMekLab, or MekHQ)
+        - [ ] I've tested the issue against the latest MILESTONE version
+        - [ ] I've asked on the MegaMek Discord about the error
+        - [ ] I've reviewed the BattleTech rules and MegaMek documentation, confirming something isn't working as intended
+        - [ ] I've searched the GitHub tracker and haven’t found the issue listed
+        
+        </details>
 
   - type: markdown
     attributes:
@@ -45,17 +42,17 @@ body:
     validations:
       required: true
 
-  # Final Checklist (This section won't appear in the final report)
-  - type: checkboxes
-    id: final-checks
+  # Final Checklist (This section will also be collapsible in the final report)
+  - type: markdown
     attributes:
-      label: Final Checklist (won't appear in final report)
-      description: Before submitting, confirm the following steps
-      options:
-        - label: "I've checked to make sure that this issue has not already been filed"
-          required: true
-        - label: "I'm reporting only one issue in this ticket for clarity and focus"
-          required: true
+      value: |
+        <details>
+        <summary>Final Checklist (click to expand)</summary>
+        
+        - [ ] I've checked to make sure that this issue has not already been filed
+        - [ ] I'm reporting only one issue in this ticket for clarity and focus
+        
+        </details>
 
   - type: markdown
     attributes:
