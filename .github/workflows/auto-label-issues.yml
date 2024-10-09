@@ -1,0 +1,41 @@
+name: Auto-label issues based on severity
+
+on:
+  issues:
+    types: [opened, edited]
+
+jobs:
+  label-issues:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Label issues based on severity
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const issueBody = context.payload.issue.body;
+          const severityRegex = /Severity \*\n(?:.*\n)*?\* (.*?)\n/g;
+          const severityMatch = severityRegex.exec(issueBody);
+          const labels = [];
+
+          if (severityMatch) {
+            const severity = severityMatch[1].toLowerCase();
+
+            if (severity.includes("critical")) {
+              labels.push('Severity: Critical', 'blocker');
+            } else if (severity.includes("high")) {
+              labels.push('Severity: High');
+            } else if (severity.includes("medium")) {
+              labels.push('Severity: Medium');
+            } else if (severity.includes("low")) {
+              labels.push('Severity: Low');
+            }
+          }
+
+          if (labels.length > 0) {
+            await github.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.issue.number,
+              labels: labels
+            });
+          }
