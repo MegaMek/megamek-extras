@@ -8,18 +8,29 @@ jobs:
   label-issues:
     runs-on: ubuntu-latest
     steps:
-    - name: Label issues based on severity
+    - name: Log issue body and severity
       uses: actions/github-script@v6
       with:
         script: |
+          // Log the full issue body
           const issueBody = context.payload.issue.body;
+          console.log('Issue Body:', issueBody);
+
+          // Regular expression to extract the severity field from the issue body
           const severityRegex = /Severity \*\n(?:.*\n)*?\* (.*?)\n/g;
           const severityMatch = severityRegex.exec(issueBody);
-          const labels = [];
+          
+          // Log the match result of the regex
+          console.log('Severity Match:', severityMatch);
 
+          const labels = [];
           if (severityMatch) {
             const severity = severityMatch[1].toLowerCase();
+            
+            // Log the detected severity
+            console.log('Detected Severity:', severity);
 
+            // Assign labels based on detected severity
             if (severity.includes("critical")) {
               labels.push('Severity: Critical', 'blocker');
             } else if (severity.includes("high")) {
@@ -29,8 +40,11 @@ jobs:
             } else if (severity.includes("low")) {
               labels.push('Severity: Low');
             }
+          } else {
+            console.log('No severity match found.');
           }
 
+          // Add the labels if any were detected
           if (labels.length > 0) {
             await github.issues.addLabels({
               owner: context.repo.owner,
@@ -38,4 +52,7 @@ jobs:
               issue_number: context.payload.issue.number,
               labels: labels
             });
+            console.log('Labels applied:', labels);
+          } else {
+            console.log('No labels applied.');
           }
