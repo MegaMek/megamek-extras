@@ -16,8 +16,8 @@ jobs:
           const issueBody = context.payload.issue.body;
           console.log('Issue Body:', issueBody);
 
-          // Regular expression to extract the severity field from the issue body
-          const severityRegex = /Severity \*\n(?:.*\n)*?\* (.*?)\n/g;
+          // Updated regular expression to extract severity from the issue body
+          const severityRegex = /### Severity \*\n\n(.*)/g;
           const severityMatch = severityRegex.exec(issueBody);
           
           // Log the match result of the regex
@@ -25,7 +25,7 @@ jobs:
 
           const labels = [];
           if (severityMatch) {
-            const severity = severityMatch[1].toLowerCase();
+            const severity = severityMatch[1].toLowerCase().trim();
             
             // Log the detected severity
             console.log('Detected Severity:', severity);
