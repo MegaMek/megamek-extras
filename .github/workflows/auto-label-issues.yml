@@ -16,7 +16,7 @@ jobs:
           const issueBody = context.payload.issue.body;
           console.log('Issue Body:', issueBody);
 
-          // Updated regular expression to extract severity from the issue body
+          // Regular expression to extract severity from the issue body
           const severityRegex = /### Severity \*\n\n(.*)/g;
           const severityMatch = severityRegex.exec(issueBody);
           
@@ -44,15 +44,19 @@ jobs:
             console.log('No severity match found.');
           }
 
-          // Add the labels if any were detected
-          if (labels.length > 0) {
+          // Make sure owner, repo, and issue number are defined before adding labels
+          const { owner, repo } = context.repo;
+          const issue_number = context.payload.issue.number;
+          
+          if (labels.length > 0 && owner && repo && issue_number) {
+            console.log(`Applying labels: ${labels} to issue #${issue_number} in ${owner}/${repo}`);
             await github.issues.addLabels({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: context.payload.issue.number,
+              owner: owner,
+              repo: repo,
+              issue_number: issue_number,
               labels: labels
             });
             console.log('Labels applied:', labels);
           } else {
-            console.log('No labels applied.');
+            console.log('No labels applied or missing context.');
           }
