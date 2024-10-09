@@ -7,56 +7,40 @@ on:
 jobs:
   label-issues:
     runs-on: ubuntu-latest
+
     steps:
-    - name: Log issue body and severity
-      uses: actions/github-script@v6
-      with:
-        script: |
-          // Log the full issue body
-          const issueBody = context.payload.issue.body;
-          console.log('Issue Body:', issueBody);
+    - name: Checkout repository
+      uses: actions/checkout@v2
 
-          // Regular expression to extract severity from the issue body
-          const severityRegex = /### Severity \*\n\n(.*)/g;
-          const severityMatch = severityRegex.exec(issueBody);
-          
-          // Log the match result of the regex
-          console.log('Severity Match:', severityMatch);
+    - name: Determine severity and apply labels
+      run: |
+        echo "Checking issue body for severity..."
+        issue_body=$(jq -r '.issue.body' "$GITHUB_EVENT_PATH")
+        echo "Issue Body: $issue_body"
 
-          const labels = [];
-          if (severityMatch) {
-            const severity = severityMatch[1].toLowerCase().trim();
-            
-            // Log the detected severity
-            console.log('Detected Severity:', severity);
+        # Use a regex to match the severity field
+        severity=$(echo "$issue_body" | grep -oP '(?<=### Severity \*\n\n).+')
+        echo "Detected Severity: $severity"
 
-            // Assign labels based on detected severity
-            if (severity.includes("critical")) {
-              labels.push('Severity: Critical', 'blocker');
-            } else if (severity.includes("high")) {
-              labels.push('Severity: High');
-            } else if (severity.includes("medium")) {
-              labels.push('Severity: Medium');
-            } else if (severity.includes("low")) {
-              labels.push('Severity: Low');
-            }
-          } else {
-            console.log('No severity match found.');
-          }
+        if [[ "$severity" =~ "Critical" ]]; then
+          labels="Severity: Critical,blocker"
+        elif [[ "$severity" =~ "High" ]]; then
+          labels="Severity: High"
+        elif [[ "$severity" =~ "Medium" ]]; then
+          labels="Severity: Medium"
+        elif [[ "$severity" =~ "Low" ]]; then
+          labels="Severity: Low"
+        else
+          labels=""
+        fi
 
-          // Make sure owner, repo, and issue number are defined before adding labels
-          const { owner, repo } = context.repo;
-          const issue_number = context.payload.issue.number;
-          
-          if (labels.length > 0 && owner && repo && issue_number) {
-            console.log(`Applying labels: ${labels} to issue #${issue_number} in ${owner}/${repo}`);
-            await github.issues.addLabels({
-              owner: owner,
-              repo: repo,
-              issue_number: issue_number,
-              labels: labels
-            });
-            console.log('Labels applied:', labels);
-          } else {
-            console.log('No labels applied or missing context.');
-          }
+        if [[ -n "$labels" ]]; then
+          echo "Applying labels: $labels"
+          gh api -X POST /repos/${{ github.repository }}/issues/${{ github.event.issue.number }}/labels \
+            -f labels="$(echo "$labels" | jq -R -s 'split(",")')"
+        else
+          echo "No severity label found."
+        fi
+
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
