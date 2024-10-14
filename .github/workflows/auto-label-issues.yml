@@ -1,46 +1,39 @@
 name: Auto-label issues based on severity
-
 on:
   issues:
     types: [opened, edited]
-
 jobs:
   label-issues:
     runs-on: ubuntu-latest
-
+    permissions:
+      issues: write
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
-
     - name: Determine severity and apply labels
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         echo "Checking issue body for severity..."
         issue_body=$(jq -r '.issue.body' "$GITHUB_EVENT_PATH")
         echo "Issue Body: $issue_body"
-
         # Use a regex to match the severity field
-        severity=$(echo "$issue_body" | grep -oP '(?<=### Severity \*\n\n).+')
+        severity=$(echo "$issue_body" | grep -oP '(?<=### Severity\s*\n\n).+')
         echo "Detected Severity: $severity"
-
-        if [[ "$severity" =~ "Critical" ]]; then
+        if [[ "$severity" =~ [Cc]ritical ]]; then
           labels="Severity: Critical,blocker"
-        elif [[ "$severity" =~ "High" ]]; then
+        elif [[ "$severity" =~ [Hh]igh ]]; then
           labels="Severity: High"
-        elif [[ "$severity" =~ "Medium" ]]; then
+        elif [[ "$severity" =~ [Mm]edium ]]; then
           labels="Severity: Medium"
-        elif [[ "$severity" =~ "Low" ]]; then
+        elif [[ "$severity" =~ [Ll]ow ]]; then
           labels="Severity: Low"
         else
           labels=""
         fi
-
         if [[ -n "$labels" ]]; then
           echo "Applying labels: $labels"
-          gh api -X POST /repos/${{ github.repository }}/issues/${{ github.event.issue.number }}/labels \
-            -f labels="$(echo "$labels" | jq -R -s 'split(",")')"
+          gh issue edit ${{ github.event.issue.number }} --add-label "$labels"
         else
           echo "No severity label found."
         fi
-
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
