@@ -9,45 +9,6 @@ body:
         **Fields marked with a red asterisk (*) are mandatory to complete.**
         In this form, you'll provide a description of the issue, steps to reproduce it, your system details, and any files that may help us resolve the problem.
 
-  - type: checkboxes
-    id: prerequisites-and-pre-issue-checks
-    attributes:
-      label: Prerequisites and Pre-Issue Checklist
-      description: Please confirm you have completed the following steps before submitting an issue.
-      options:
-        - label: |
-            I'm reporting the issue to the correct repository:
-            - [MegaMek](https://github.com/MegaMek/megamek/issues)
-            - [MegaMekLab](https://github.com/MegaMek/megameklab/issues)
-            - [MekHQ](https://github.com/MegaMek/mekhq/issues)
-          required: true
-        - label: "I've tested the issue against the latest MILESTONE version"
-          required: true
-        - label: "I've asked on the MegaMek Discord about the error"
-          required: true
-        - label: "I've reviewed the BattleTech rules and MegaMek documentation, and I've confirmed that something isn't working as intended."
-          required: true
-        - label: "I've searched the GitHub tracker and haven't found the issue listed"
-          required: true
-
-  - type: markdown
-    attributes:
-      value: |
-        ![How to Search the GitHub Tracker](https://i.imgur.com/QMJY7pll.png)
-
-  - type: dropdown
-    id: severity
-    attributes:
-      label: Severity *
-      description: Choose the severity of the bug.
-      options:
-        - "Critical (Game-breaking/Crash): The game crashes or a core feature (like saving, loading, or network connection) is completely unusable."
-        - "High (Major Disruption): A major feature is broken or incorrect, but a workaround exists."
-        - "Medium (Gameplay Limitation): Non-core functionality is impaired, providing a suboptimal but playable experience."
-        - "Low (Minor/Nuisance): Minor glitches or cosmetic issues that don't affect gameplay and occur rarely."
-    validations:
-      required: true
-
   - type: markdown
     attributes:
       value: |
@@ -71,18 +32,33 @@ body:
     validations:
       required: true
 
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity *
+      description: Choose the severity of the bug.
+      options:
+        - "Critical (Game-breaking/Crash): The game crashes or a core feature (like saving, loading, or network connection) is completely unusable."
+        - "High (Major Disruption): A major feature is broken or incorrect, but a workaround exists."
+        - "Medium (Gameplay Limitation): Non-core functionality is impaired, providing a suboptimal but playable experience."
+        - "Low (Minor/Nuisance): Minor glitches or cosmetic issues that don't affect gameplay and occur rarely."
+    validations:
+      required: true
+
   - type: textarea
     id: steps-to-reproduce
     attributes:
-      label: Steps to Reproduce
+      label: Steps to Reproduce *
       description: Provide a detailed numbered list of steps.
       placeholder: "1. Step one\n2. Step two\n3. Step three"
+    validations:
+      required: true
 
   - type: dropdown
     id: operating-system
     attributes:
       label: Operating System *
-      description: What kind of computer are you using? Select your operating system (like Windows or Mac).
+      description: What kind of computer are you using? Select your operating system.
       options:
         - "Windows 11"
         - "Windows 10"
@@ -100,33 +76,25 @@ body:
     validations:
       required: true
 
-  - type: dropdown
+  - type: input
     id: megamek-version
     attributes:
       label: MegaMek Suite Version *
-      description: Which version of MegaMek are you using? Pick your version from the list. If you select "Free Text," please enter your version in the box below.
-      options:
-        - "v0.50.0"
-        - "v0.49.19.1"
-        - "v0.49.19"
-        - "v0.49.18"
-        - "v0.49.17"
-        - "v0.49.16"
-        - "v0.49.15"
-        - "Free Text (type manually)"
-
-  - type: input
-    id: custom-megamek-version
-    attributes:
-      label: Custom MegaMek Version
-      description: If you selected "Free Text" in the version dropdown, enter your MegaMek version here.
-      placeholder: "Enter your MegaMek version here if it's not listed above."
+      description: Please enter your version of MegaMek.
+      placeholder: "Enter your MegaMek version here."
+    validations:
+      required: true
 
   - type: textarea
     id: attached-files
     attributes:
       label: Attach Files
-      description: Provide any relevant files by attaching them to the issue.
+      description: |
+        Provide any relevant files by attaching them to the issue.
+        Helpful files include:
+        - MegaMek.log
+        - Saved game files (.sav)
+        - Screenshots showing the issue
       placeholder: "Drag and drop or click to upload relevant files."
 
   - type: markdown
@@ -147,8 +115,32 @@ body:
         User Environment:
         - OS: ${{ operating-system }}
         - Java Version: ${{ java-version }}
-        - MegaMek Version: ${{ megamek-version }} ${{ custom-megamek-version }}
+        - MegaMek Version: ${{ megamek-version }}
       render: markdown
+
+  - type: checkboxes
+    id: prerequisites-and-pre-issue-checks
+    attributes:
+      label: Issues Checklist
+      description: Please confirm you have completed the following steps before submitting an issue.
+      options:
+        - label: "I understand which repository to report to: MegaMek for game issues, MegaMekLab for unit editing issues, or MekHQ for campaign issues"
+          required: true
+        - label: "I've reviewed the BattleTech rules and MegaMek documentation, and I've confirmed that something isn't working as intended."
+          required: true
+        - label: "I've asked on the MegaMek Discord about the error"
+          required: true
+        - label: "I've tested the issue at least against the latest MILESTONE version"
+          required: true    
+        - label: "I've searched the Github tracker and haven't found the issue listed"
+          required: true
+        - label: "I'm reporting only one issue in this ticket for clarity and focus"
+          required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ![How to Search the GitHub Tracker](/assets/images/github-search-guide.png)
 
   - type: checkboxes
     id: final-checks
@@ -157,8 +149,6 @@ body:
       description: Before submitting, confirm the following steps
       options:
         - label: "I've checked to make sure that this issue has not already been filed"
-          required: true
-        - label: "I'm reporting only one issue in this ticket for clarity and focus"
           required: true
 
   - type: markdown
