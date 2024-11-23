@@ -14,6 +14,7 @@ body:
     attributes:
       label: Prerequisites and Pre-Issue Checklist
       description: Please confirm you have completed the following steps before submitting an issue.
+      hidden: true
       options:
         - label: |
             I'm reporting the issue to the correct repository:
