@@ -97,17 +97,10 @@ body:
         - Screenshots showing the issue
       placeholder: "Drag and drop or click to upload relevant files."
 
-  - type: markdown
-    attributes:
-      value: |
-        ---
-        ## Internal Use Only
-        The following information is for internal use and will be hidden in the final report.
-
   - type: textarea
     id: hidden-info
     attributes:
-      label: Hidden Information
+      label: System Information Summary
       value: |
         Prerequisites completed:
         <!-- The checkboxes data will be inserted here by a GitHub Action -->
@@ -117,6 +110,11 @@ body:
         - Java Version: ${{ java-version }}
         - MegaMek Version: ${{ megamek-version }}
       render: markdown
+
+  - type: markdown
+    attributes:
+      value: |
+        ![How to Search the GitHub Tracker](https://i.imgur.com/QMJY7pll.png)
 
   - type: checkboxes
     id: prerequisites-and-pre-issue-checks
@@ -137,19 +135,7 @@ body:
         - label: "I'm reporting only one issue in this ticket for clarity and focus"
           required: true
 
-  - type: markdown
-    attributes:
-      value: |
-        ![How to Search the GitHub Tracker](/assets/images/github-search-guide.png)
 
-  - type: checkboxes
-    id: final-checks
-    attributes:
-      label: Final Checklist
-      description: Before submitting, confirm the following steps
-      options:
-        - label: "I've checked to make sure that this issue has not already been filed"
-          required: true
 
   - type: markdown
     attributes:
