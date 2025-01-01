@@ -1,25 +1,23 @@
 name: Bug Report
-description: Report an issue with MegaMek
+description: |
+  Before submitting a bug report, please ensure you have completed these essential steps:
+  
+  - Verify you're using the correct repository:
+    * MegaMek: github.com/MegaMek/megamek/issues
+    * MegaMekLab: github.com/MegaMek/megameklab/issues
+    * MekHQ: github.com/MegaMek/mekhq/issues
+  
+  - Test the issue against the latest MILESTONE version
+  - Consult with the MegaMek Discord community
+  - Review relevant BattleTech rules and MegaMek documentation
+  - Search the GitHub issue tracker for similar reports
+  
+  If you have completed all these steps, proceed with filling out the bug report form below.
+  
+  Fields marked with a red asterisk (*) are mandatory to complete.
 title: "Brief Description"
 labels: [bug]
 body:
-  - type: checkboxes
-    id: hidden-prerequisites
-    attributes:
-      label: Required Checks
-      description: These checks are required but won't be visible in the final report
-      options:
-        - label: "Repository check completed"
-          required: true
-        - label: "Latest MILESTONE version tested"
-          required: true
-        - label: "Discord consultation completed"
-          required: true
-        - label: "Documentation reviewed"
-          required: true
-        - label: "Issue tracker searched"
-          required: true
-
   - type: textarea
     id: brief-description
     attributes:
@@ -56,12 +54,24 @@ body:
       description: Provide a detailed numbered list of steps.
       placeholder: "1. Step one\n2. Step two\n3. Step three"
 
-  - type: input
+  - type: markdown
+    attributes:
+      value: |
+        ## User Environment
+
+        For the next sections go to the logs folder inside MegaMek (usually called 'logs'). Find the MegaMek.log file, open it with a text editor.
+
+  - type: dropdown
     id: operating-system
     attributes:
       label: Operating System *
       description: Select your operating system
-      placeholder: e.g. "Windows 11, Windows 10,Older Windows,Mac (be specific),Linux (be specific)"
+      options:
+        - "Windows 11"
+        - "Windows 10"
+        - "Older Windows"
+        - "Mac"
+        - "Linux"
     validations:
       required: true
 
@@ -75,7 +85,7 @@ body:
       required: true
 
   - type: input
-    id: megamek-version
+    id: custom-megamek-version
     attributes:
       label: MegaMek Suite Version *
       description: Enter your MegaMek version here
@@ -87,16 +97,16 @@ body:
     id: attached-files
     attributes:
       label: Attach Files
-      description: Provide any relevant files by attaching them to the issue.
+      description: Please provide your logs folder (zipped) and any other relevant files.
       placeholder: "Drag and drop or click to upload relevant files."
 
   - type: checkboxes
     id: final-checks
     attributes:
-      label: Final Checklist
-      description: Before submitting, confirm the following
+      label: Final Verification
+      description: Please confirm the following before submitting
       options:
-        - label: "I've verified this is a single, unique issue"
+        - label: "I confirm this is a single, unique issue that hasn't been reported before"
           required: true
-        - label: "I've included all necessary information"
+        - label: "I have included all necessary information and files to help reproduce this issue"
           required: true
