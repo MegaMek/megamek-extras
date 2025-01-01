@@ -1,24 +1,25 @@
 name: Bug Report
-description: "Please review this before submitting a [bug report](https://github.com/MegaMek/megamek/wiki/Creating-an-Issue-(Bug-Report%2C-Request-for-Enhancement%2C-Errata))."
+description: "Please make sure you're opening the issue on the correct repo; you've checked to make sure this isn't a duplicate, and checked on the Discord that there is an issue and not working as intended."
 
-title: "Brief Description"
-labels: [bug]
-body:
-  - type: textarea
-    id: brief-description
-    attributes:
-      label: Brief Description *
-      description: |
-        Please describe the issue in detail:
-        1. Provide in-game screenshots if possible.
-        2. If it's a rules-related issue:
-           - Specify the rulebook edition
-           - Include the page number
-           - Quote the relevant text
-        3. If applicable, list the steps to reproduce the issue in the saved game.
-      placeholder: "Describe the issue here..."
-    validations:
-      required: true
+- type: textarea
+  id: brief-description
+  attributes:
+    label: Brief Description *
+    description: |
+      Please describe the issue in detail.
+
+      For more detailed instructions, check out
+      [our wiki](https://github.com/MegaMek/megamek/wiki/Creating-an-Issue-(Bug-Report%2C-Request-for-Enhancement%2C-Errata)).
+
+      1. Provide in-game screenshots if possible.
+      2. If it's a rules-related issue:
+         - Specify the rulebook edition
+         - Include the page number
+         - Quote the relevant text
+      3. If applicable, list the steps to reproduce the issue in the saved game.
+    placeholder: "Describe the issue here..."
+  validations:
+    required: true
 
   - type: textarea
     id: steps-to-reproduce
