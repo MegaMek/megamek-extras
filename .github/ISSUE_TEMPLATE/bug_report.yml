@@ -1,6 +1,6 @@
 name: Bug Report
-description: Please review this before submit a [bug report](https://github.com/MegaMek/megamek/wiki/Creating-an-Issue-(Bug-Report,-Request-for-Enhancement,-Errata).
-      
+description: Please review this before submitting a [bug report](https://github.com/MegaMek/megamek/wiki/Creating-an-Issue). Guide: github.com/MegaMek/megamek/wiki/Creating-an-Issue
+
 title: "Brief Description"
 labels: [bug]
 body:
@@ -27,6 +27,13 @@ body:
       description: Provide a detailed numbered list of steps.
       placeholder: "1. Step one\n2. Step two\n3. Step three"
 
+  - type: textarea
+    id: attached-files
+    attributes:
+      label: Attach Files
+      description: Please provide your logs folder (zipped) and any other relevant files.
+      placeholder: "Drag and drop or click to upload relevant files."
+
   - type: dropdown
     id: severity
     attributes:
@@ -44,7 +51,6 @@ body:
     attributes:
       value: |
         ## User Environment
-
         For the next sections go to the logs folder inside MegaMek (usually called 'logs'). Find the MegaMek.log file, open it with a text editor.
 
   - type: input
@@ -55,13 +61,20 @@ body:
       placeholder: "Example: 0.50.02"
     validations:
       required: true
-      
-  - type: input
+
+  - type: dropdown
     id: operating-system
     attributes:
       label: Operating System *
       description: Select your operating system
-      placeholder: "Please be very Specific with OS and version"
+      options:
+        - "Windows 11"
+        - "Windows 10"
+        - "Windows 8/8.1"
+        - "Windows 7"
+        - "macOS"
+        - "Linux"
+        - "Other (Please specify in description)"
     validations:
       required: true
 
@@ -74,13 +87,6 @@ body:
     validations:
       required: true
 
-  - type: textarea
-    id: attached-files
-    attributes:
-      label: Attach Files
-      description: Please provide your logs folder (zipped) and any other relevant files.
-      placeholder: "Drag and drop or click to upload relevant files."
-
   - type: checkboxes
     id: final-checks
     attributes:
@@ -91,7 +97,7 @@ body:
           required: true
         - label: "I have included all necessary information and files to help reproduce this issue"
           required: true
-        - label: "I have asked on MegaMek Discord that this is an issue"
+        - label: "I have asked on MegaMek Discord about this issue"
           required: true
-        - label: "I have confirmed this issue is being opened on the correct repository: [MegaMek](https://github.com/MegaMek/megamek/issues), [MegaMekLab](https://github.com/MegaMek/megameklab/issues), or [MekHQ](https://github.com/MegaMek/mekhq/issues)"
-          required: true       
+        - label: "I have confirmed this issue is being opened on the correct repository: MegaMek, MegaMekLab, or MekHQ"
+          required: true
