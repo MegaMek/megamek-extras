@@ -1,5 +1,6 @@
 name: Bug Report
-description: Submit a bug report for MegaMek. Please ensure you've checked the correct repository, tested the latest version, and consulted Discord before proceeding.
+description: Submit a bug report for MegaMek. Please ensure you've search for an existing issue, tested the latest version, and consulted Discord before proceeding.
+
 title: "Brief Description"
 labels: [bug]
 body:
@@ -14,6 +15,7 @@ body:
         - Searched for existing issues
 
         Fields marked with a red asterisk (*) are mandatory.
+        
 title: "Brief Description"
 labels: [bug]
 body:
@@ -109,3 +111,7 @@ body:
           required: true
         - label: "I have included all necessary information and files to help reproduce this issue"
           required: true
+        - label: "I have asked on MegaMek Discord that this is an issue"
+          required: true
+        - label: "I have confirmed this issue is being opened on the correct repository: [MegaMek](https://github.com/MegaMek/megamek/issues), [MegaMekLab](https://github.com/MegaMek/megameklab/issues), or [MekHQ](https://github.com/MegaMek/mekhq/issues)"
+          required: true       
