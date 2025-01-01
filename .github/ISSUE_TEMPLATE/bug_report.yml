@@ -1,5 +1,5 @@
 name: Bug Report
-description: Submit a [bug report](https://github.com/MegaMek/megamek/wiki/Creating-an-Issue-(Bug-Report,-Request-for-Enhancement,-Errata) for MegaMek. Please ensure you've search for an existing issue, tested the latest version, and consulted Discord before proceeding.
+description: Submit a [bug report](https://github.com/MegaMek/megamek/wiki/Creating-an-Issue-(Bug-Report,-Request-for-Enhancement,-Errata). Please ensure you've checked for an existing issue, tried the latest version, and checked Discord before proceeding.
       
 title: "Brief Description"
 labels: [bug]
