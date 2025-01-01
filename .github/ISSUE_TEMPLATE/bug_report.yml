@@ -1,21 +1,6 @@
 name: Bug Report
-description: Submit a bug report for MegaMek. Please ensure you've search for an existing issue, tested the latest version, and consulted Discord before proceeding.
-
-title: "Brief Description"
-labels: [bug]
-body:
-  - type: markdown
-    attributes:
-      value: |
-        Before proceeding, please verify:
-        - Using correct repository: [MegaMek](https://github.com/MegaMek/megamek/issues), [MegaMekLab](https://github.com/MegaMek/megameklab/issues), or [MekHQ](https://github.com/MegaMek/mekhq/issues)
-        - Tested against latest MILESTONE version
-        - Consulted MegaMek Discord
-        - Reviewed documentation
-        - Searched for existing issues
-
-        Fields marked with a red asterisk (*) are mandatory.
-        
+description: Submit a [bug report](https://github.com/MegaMek/megamek/wiki/Creating-an-Issue-(Bug-Report,-Request-for-Enhancement,-Errata) for MegaMek. Please ensure you've search for an existing issue, tested the latest version, and consulted Discord before proceeding.
+      
 title: "Brief Description"
 labels: [bug]
 body:
@@ -35,6 +20,13 @@ body:
     validations:
       required: true
 
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps to Reproduce
+      description: Provide a detailed numbered list of steps.
+      placeholder: "1. Step one\n2. Step two\n3. Step three"
+
   - type: dropdown
     id: severity
     attributes:
@@ -48,13 +40,6 @@ body:
     validations:
       required: true
 
-  - type: textarea
-    id: steps-to-reproduce
-    attributes:
-      label: Steps to Reproduce
-      description: Provide a detailed numbered list of steps.
-      placeholder: "1. Step one\n2. Step two\n3. Step three"
-
   - type: markdown
     attributes:
       value: |
@@ -62,17 +47,21 @@ body:
 
         For the next sections go to the logs folder inside MegaMek (usually called 'logs'). Find the MegaMek.log file, open it with a text editor.
 
-  - type: dropdown
+  - type: input
+    id: custom-megamek-version
+    attributes:
+      label: MegaMek Suite Version *
+      description: Enter your MegaMek version here
+      placeholder: "Example: 0.50.02"
+    validations:
+      required: true
+      
+  - type: input
     id: operating-system
     attributes:
       label: Operating System *
       description: Select your operating system
-      options:
-        - "Windows 11"
-        - "Windows 10"
-        - "Older Windows"
-        - "Mac"
-        - "Linux"
+      placeholder: "Please be very Specific with OS and version"
     validations:
       required: true
 
@@ -82,15 +71,6 @@ body:
       label: Java Version *
       description: Enter the Java version from your MegaMek.log file
       placeholder: "Example: Java Vendor: Eclipse Adoptium     Java Version: 17.0.11"
-    validations:
-      required: true
-
-  - type: input
-    id: custom-megamek-version
-    attributes:
-      label: MegaMek Suite Version *
-      description: Enter your MegaMek version here
-      placeholder: "Example: 0.50.02"
     validations:
       required: true
 
