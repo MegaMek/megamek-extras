@@ -1,20 +1,19 @@
 name: Bug Report
-description: |
-  Before submitting a bug report, please ensure you have completed these essential steps:
-  
-  - Verify you're using the correct repository:
-    * MegaMek: github.com/MegaMek/megamek/issues
-    * MegaMekLab: github.com/MegaMek/megameklab/issues
-    * MekHQ: github.com/MegaMek/mekhq/issues
-  
-  - Test the issue against the latest MILESTONE version
-  - Consult with the MegaMek Discord community
-  - Review relevant BattleTech rules and MegaMek documentation
-  - Search the GitHub issue tracker for similar reports
-  
-  If you have completed all these steps, proceed with filling out the bug report form below.
-  
-  Fields marked with a red asterisk (*) are mandatory to complete.
+description: Submit a bug report for MegaMek. Please ensure you've checked the correct repository, tested the latest version, and consulted Discord before proceeding.
+title: "Brief Description"
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Before proceeding, please verify:
+        - Using correct repository: [MegaMek](https://github.com/MegaMek/megamek/issues), [MegaMekLab](https://github.com/MegaMek/megameklab/issues), or [MekHQ](https://github.com/MegaMek/mekhq/issues)
+        - Tested against latest MILESTONE version
+        - Consulted MegaMek Discord
+        - Reviewed documentation
+        - Searched for existing issues
+
+        Fields marked with a red asterisk (*) are mandatory.
 title: "Brief Description"
 labels: [bug]
 body:
