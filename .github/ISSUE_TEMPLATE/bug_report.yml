@@ -1,5 +1,8 @@
 name: Bug Report
-description: "Please make sure you're opening the issue on the correct repo; you've checked to make sure this isn't a duplicate, and checked on the Discord that there is an issue and not working as intended."
+description: >-
+  Please make sure you're opening the issue on the correct repo;
+  you've checked to make sure this isn't a duplicate, and checked
+  on the Discord that there is an issue and not working as intended.
 
 - type: textarea
   id: brief-description
