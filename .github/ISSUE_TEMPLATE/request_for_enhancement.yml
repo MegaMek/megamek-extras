@@ -5,8 +5,21 @@ description: >
 title: "[RFE]"
 labels:
   - enhancement
-
+  
 body:
+  - type: dropdown
+    id: enhancement-type
+    attributes:
+      label: "Enhancement Type *"
+      description: "Select the category of enhancement you are requesting."
+      options:
+        - "New Feature"
+        - "Improvement to Existing Feature"
+        - "Implementation of Missing Official Rule"
+        - "Implementation of Errata"
+    validations:
+      required: true
+
   - type: textarea
     id: brief-description
     attributes:
@@ -37,19 +50,6 @@ body:
         Provide any relevant files, images, or logs that illustrate your idea or 
         help explain how it should work.
       placeholder: "Drag and drop or click to upload relevant files."
-
-  - type: dropdown
-    id: enhancement-type
-    attributes:
-      label: "Enhancement Type *"
-      description: "Select the category of enhancement you are requesting."
-      options:
-        - "New Feature"
-        - "Improvement to Existing Feature"
-        - "Implementation of Missing Official Rule"
-        - "Implementation of Errata"
-    validations:
-      required: true
 
   - type: input
     id: custom-megamek-version
