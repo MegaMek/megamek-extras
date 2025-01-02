@@ -23,7 +23,6 @@ body:
            - Specify the rulebook edition
            - Include the page number
            - Quote the relevant text
-        3. If applicable, list the steps to reproduce the issue in the saved game.
       placeholder: "Describe the issue here..."
     validations:
       required: true
@@ -31,7 +30,7 @@ body:
   - type: textarea
     id: steps-to-reproduce
     attributes:
-      label: "Steps to Reproduce"
+      label: "3. Steps to Reproduce"
       description: "Provide a detailed numbered list of steps."
       placeholder: "1. Step one\n2. Step two\n3. Step three"
 
@@ -39,7 +38,7 @@ body:
     id: attached-files
     attributes:
       label: "Attach Files"
-      description: "Please provide your logs folder (zipped) and any other relevant files."
+      description: "Please provide all the logs from the logs folder (zipped) and any other relevant files."
       placeholder: "Drag and drop or click to upload relevant files."
 
   - type: dropdown
@@ -59,7 +58,13 @@ body:
     attributes:
       value: |
         ## User Environment
-        For the next sections, go to the logs folder inside MegaMek (usually called "logs"). Find the MegaMek.log file and open it with a text editor.
+        For the next sections, go to the logs folder inside MegaMek (usually called "logs"). Find the MegaMek.log file and open it with a text editor. The information in the header will be needed.
+
+  - type: markdown
+    attributes:
+      value: |
+        ### Screenshot
+        ![Alt text](https://i.imgur.com/KD8cnvf.png)
 
   - type: input
     id: custom-megamek-version
