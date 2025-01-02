@@ -58,12 +58,11 @@ body:
     attributes:
       value: |
         ## User Environment
-        For the next sections, go to the logs folder inside MegaMek (usually called "logs"). Find the MegaMek.log file and open it with a text editor. The information in the header will be needed.
+        For the next sections, go to the "logs" folder. Find the MegaMek.log file and open it with a text editor. The information in the header will be needed.
 
   - type: markdown
     attributes:
       value: |
-        ### Screenshot
         ![Alt text](https://i.imgur.com/KD8cnvf.png)
 
   - type: input
@@ -75,19 +74,12 @@ body:
     validations:
       required: true
 
-  - type: dropdown
+  - type: input
     id: operating-system
     attributes:
       label: "Operating System *"
       description: "Select your operating system"
-      options:
-        - "Windows 11"
-        - "Windows 10"
-        - "Windows 8/8.1"
-        - "Windows 7"
-        - "macOS"
-        - "Linux"
-        - "Other (Please specify in description)"
+      placeholder: "Please be specific with the OS, e.g. Windows 11, macOS 15 Sequoia, Linux (Ubuntu)"
     validations:
       required: true
 
@@ -95,7 +87,7 @@ body:
     id: java-version
     attributes:
       label: "Java Version *"
-      description: "Enter the Java version from your MegaMek.log file"
+      description: "Enter the Java version from the .log file"
       placeholder: "Example: Java Vendor: Eclipse Adoptium     Java Version: 17.0.11"
     validations:
       required: true
