@@ -53,7 +53,6 @@ body:
         - "Low (Minor/Nuisance): Minor glitches or cosmetic issues that don't affect gameplay and occur rarely."
     validations:
       required: true
-    dynamic_labels: true
 
   - type: markdown
     attributes:
