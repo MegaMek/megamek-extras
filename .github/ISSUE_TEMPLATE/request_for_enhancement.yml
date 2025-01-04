@@ -4,7 +4,7 @@ description: >
   and that you've checked on the Discord if your request is already known.
 title: "[RFE]"
 labels:
-  - enhancement
+  - (RFE) Enhancement
   
 body:
   - type: dropdown
